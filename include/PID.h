@@ -1,3 +1,8 @@
+/// @file   PID.h
+/// @brief  PID Controller with anti windup
+/// @date   2023.07.18
+/// @author Akiro Harada
+
 #ifndef PID_H
 #define PID_H
 
