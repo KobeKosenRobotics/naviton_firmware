@@ -1,0 +1,6 @@
+#ifndef SOFTWARE_PARAMS_H
+#define SOFTWARE_PARAMS_H
+
+#define SERIAL_BAUDRATE 9600
+
+#endif
