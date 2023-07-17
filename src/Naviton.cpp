@@ -19,4 +19,4 @@ void Naviton::Update()
 {
     _drive.Update();
     Serial.println();
-} 
+}
