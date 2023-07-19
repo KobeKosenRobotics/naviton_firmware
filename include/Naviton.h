@@ -20,8 +20,8 @@ class Naviton
         DifferentialDrive _drive;
     public:
         Naviton();
-        void Init();
-        void Update();
+        virtual void Init();
+        virtual void Update();
 };
 
 #endif
