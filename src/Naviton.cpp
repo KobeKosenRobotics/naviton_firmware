@@ -29,6 +29,11 @@ void Naviton::Update()
 
     _drive.Update();
 
+    Serial.println();
+}
+
+void Naviton::UpdateInput()
+{
     if(_ps3_wireless.GetClick(SELECT)) _controller_mode = false;
     else if(_ps3_wired.GetClick(SELECT)) _controller_mode = true;
 
@@ -40,6 +45,4 @@ void Naviton::Update()
     {
         _drive.Stop();
     }
-
-    Serial.println();
 }

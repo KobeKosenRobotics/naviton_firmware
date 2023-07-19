@@ -27,6 +27,7 @@ class Naviton
         Naviton();
         virtual void Init();
         virtual void Update();
+        virtual void UpdateInput();
 };
 
 #endif

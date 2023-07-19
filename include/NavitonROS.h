@@ -17,10 +17,12 @@ class NavitonROS : Naviton
 {
     private:
         ros::Subscriber<geometry_msgs::Twist, NavitonROS> _cmd_vel_sub;
+        geometry_msgs::Twist _cmd_vel;
     public:
         NavitonROS();
         void Init(ros::NodeHandle& nh);
         void Update();
+        void UpdateInput();
 
         void cmd_vel_cb(const geometry_msgs::Twist& twist);
 
