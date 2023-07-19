@@ -1,11 +1,8 @@
 #include <Arduino.h>
-#include <ros.h>
 
-#include <Encoder.h>
+#include "NavitonROS.h"
 
-#include "Naviton.h"
-
-Naviton nvt;
+NavitonROS nvt;
 
 void setup()
 {

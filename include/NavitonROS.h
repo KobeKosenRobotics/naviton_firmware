@@ -7,6 +7,8 @@ class NavitonROS : Naviton
 {
     public:
         NavitonROS();
+        void Init();
+        void Update();
 };
 
 #endif

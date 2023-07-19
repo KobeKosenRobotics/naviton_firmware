@@ -16,7 +16,7 @@
 
 class Naviton
 {
-    private:
+    protected:
         DifferentialDrive _drive;
     public:
         Naviton();
