@@ -1,3 +1,8 @@
+/// @file   NavitonROS.h
+/// @brief
+/// @date   2023.07.19
+/// @author Akiro Harada
+
 #ifndef NAVITON_ROS_H
 #define NAVITON_ROS_H
 
