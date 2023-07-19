@@ -20,6 +20,7 @@ bool Gyro::Init()
 {
     if(!_bno.begin()) return false;
     _bno.setExtCrystalUse(true);
+    return true;
 }
 
 /// @brief 
