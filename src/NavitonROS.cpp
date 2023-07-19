@@ -25,11 +25,12 @@ void NavitonROS::UpdateInput()
     {
         if(digitalRead(AUTO_MANUAL_SWITCH_PIN))
         {
-            
+            // Auto
+            _drive.Drive(_cmd_vel.linear.x, _cmd_vel.angular.z);
         }
         else
         {
-
+            // Manual
         }
     }
     else

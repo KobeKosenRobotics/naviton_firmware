@@ -3,8 +3,8 @@
 #define SELECT PS3Button::SELECT
 
 Naviton::Naviton() :
-    _ps3_wireless(PS3_WIRELESS_ID),
-    _ps3_wired(PS3_WIRELD_ID),
+    _ps3_wireless(PS3_WIRELESS_ADDRESS),
+    _ps3_wired(PS3_WIRELD_ADDRESS),
     _drive(new int[4]{LEFT_WHEEL_PINS}, new int[4]{RIGHT_WHEEL_PINS})
 {
 

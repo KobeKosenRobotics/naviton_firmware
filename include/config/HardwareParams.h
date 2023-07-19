@@ -4,8 +4,11 @@
 #define I2C_SCL 33
 #define I2C_SDA 34
 
-#define PS3_WIRELESS_ID 0x73
-#define PS3_WIRELD_ID   0x74
+#define PS3_WIRELESS_ADDRESS    0x73
+#define PS3_WIRELD_ADDRESS      0x74
+
+#define BNO_ID                  -1
+#define BNO_ADDRESS             0x29
 
 #define EMERGENCY_STOP_PIN      22
 #define AUTO_MANUAL_SWITCH_PIN  30
