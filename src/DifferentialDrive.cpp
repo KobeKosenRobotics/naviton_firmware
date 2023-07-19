@@ -19,11 +19,11 @@ DifferentialDrive::DifferentialDrive(int pin_l[], int pin_r[]) :
 /// @param footprint_width 
 /// @param wheel_radius 
 /// @param ppr 
-void DifferentialDrive::Init(double footprint_width, double wheel_radius, double ppr)
+void DifferentialDrive::Init(double footprint_width, double wheel_radius, double ppr, double pid_params[])
 {
     _footprint_width_2 = footprint_width * 0.5;
-    _wheel_l.Init(wheel_radius, ppr);
-    _wheel_r.Init(wheel_radius, ppr);
+    _wheel_l.Init(wheel_radius, ppr, pid_params);
+    _wheel_r.Init(wheel_radius, ppr, pid_params);
 }
 
 /// @brief Inverse Kinematics

@@ -31,7 +31,7 @@ class Wheel
         Wheel();
         Wheel(int pin_alpha, int pin_beta, int pin_pwm, int pin_dir);
 
-        void Init(double radius, double ppr);
+        void Init(double radius, double ppr, double pid_params[]);
         void Update();
         void Drive(double velocity);
 

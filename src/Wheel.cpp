@@ -11,10 +11,12 @@ Wheel::Wheel(int pin_alpha, int pin_beta, int pin_pwm, int pin_dir) :
 {
 }
 
-void Wheel::Init(double radius, double ppr)
+void Wheel::Init(double radius, double ppr, double pid_params[])
 {
     _radius = radius;
     _ppr_inv = 1.0 / ppr;
+
+    _pid.Init(pid_params[0], pid_params[1], pid_params[2], pid_params[3], pid_params[4], pid_params[5]);
 }
 
 void Wheel::Update()

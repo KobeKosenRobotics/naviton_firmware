@@ -14,7 +14,7 @@ void Naviton::Init()
     Wire.setSCL(I2C_SCL);
     Wire.setSDA(I2C_SDA);
 
-    _drive.Init(FOOTPRINT_WIDTH, WHEEL_RADIUS, WHEEL_ENCODER_PPR);
+    _drive.Init(FOOTPRINT_WIDTH, WHEEL_RADIUS, WHEEL_ENCODER_PPR, new double[6]{WHEEL_PID_GAIN, WHEEL_PID_AW_GAIN, WHEEL_PID_DERIATIVE_FILTER_COEF, WHEEL_PID_LOOP_TIME});
 }
 
 void Naviton::Update()

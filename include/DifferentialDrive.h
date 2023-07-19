@@ -16,13 +16,13 @@ class DifferentialDrive
 
         double _linear_velocity, _angular_velocity;
 
-        double _footprint_width_2;                                          // [m]
+        double _footprint_width_2;                                                                  // [m]
     public:
         DifferentialDrive();
         DifferentialDrive(int pin_l[], int pin_r[]);
-        void Init(double footprint_width, double wheel_radius, double ppr); // [m], [m], []
+        void Init(double footprint_width, double wheel_radius, double ppr, double pid_params[]);    // [m], [m], [], []
         void Update();
-        void Drive(double linear_velocity, double angular_velocity);        // [m/s], [rad/s]
+        void Drive(double linear_velocity, double angular_velocity);                                // [m/s], [rad/s]
 
         double GetLinearVelocity();
         double GetAngularVelocity();
