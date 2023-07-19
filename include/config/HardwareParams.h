@@ -4,6 +4,11 @@
 #define I2C_SCL 33
 #define I2C_SDA 34
 
+#define PS3_WIRELESS_ID 0x73
+#define PS3_WIRELD_ID   0x74
+
+#define EMERGENCY_STOP_PIN 22
+
 // ENCODER_ALPHA, ENCODER_BETA, MD_PWM, MD_DIR
 #define LEFT_WHEEL_PINS     1,2,3,4
 #define RIGHT_WHEEL_PINS    1,2,3,4

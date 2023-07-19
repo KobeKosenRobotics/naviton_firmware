@@ -39,8 +39,14 @@ void Wheel::Update()
 
 void Wheel::Drive(double velocity)
 {
-    Serial.println(velocity);
     _velocity_target = velocity;
+}
+
+void Wheel::Stop()
+{
+    _pid.ResetI();
+    _motor.Stop();
+    _velocity_target = 0;
 }
 
 double Wheel::GetVelocity()

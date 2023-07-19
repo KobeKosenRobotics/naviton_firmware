@@ -34,6 +34,7 @@ class Wheel
         void Init(double radius, double ppr, double pid_params[]);
         void Update();
         void Drive(double velocity);
+        void Stop();
 
         double GetVelocity();
 };

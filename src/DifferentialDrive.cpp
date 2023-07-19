@@ -47,6 +47,13 @@ void DifferentialDrive::Drive(double linear_velocity, double angular_velocity)
 }
 
 /// @brief 
+void DifferentialDrive::Stop()
+{
+    _wheel_l.Stop();
+    _wheel_r.Stop();
+}
+
+/// @brief 
 /// @return _linear_veloicity [m/s]
 double DifferentialDrive::GetLinearVelocity()
 {

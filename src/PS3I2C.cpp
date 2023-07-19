@@ -35,17 +35,20 @@ void PS3I2C::Update()
 
 byte PS3I2C::GetAxis(PS3Axis axis)
 {
+    if(!IsConnected()) return 128;
     return _data_raw[static_cast<int>(axis)];
 }
 
 bool PS3I2C::GetClick(PS3Button button)
 {
+    if(!IsConnected()) return false;
     int id = static_cast<int>(button);
     return bitRead(_data_raw[id < 8 ? 6 : 7], id%8) && bitRead(_data_last[id < 8 ? 6 : 7], id%8);
 }
 
 bool PS3I2C::GetPress(PS3Button button)
 {
+    if(!IsConnected()) return false;
     int id = static_cast<int>(button);
     return bitRead(_data_raw[id < 8 ? 6 : 7], id%8);
 }
