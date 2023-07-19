@@ -3,5 +3,6 @@
         "string": "cpp",
         "initializer_list": "cpp",
         "cmath": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": true
 }
