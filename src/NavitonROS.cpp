@@ -10,6 +10,7 @@ NavitonROS::NavitonROS() :
 void NavitonROS::Init(ros::NodeHandle& nh)
 {
     Naviton::Init();
+    nh.subscribe(_cmd_vel_sub);
 }
 
 void NavitonROS::Update()
