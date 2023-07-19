@@ -5,16 +5,16 @@ Wheel::Wheel() : _encoder(0, 0)
 
 }
 
-Wheel::Wheel(int pin_alpha, int pin_beta, double ppr, int pin_pwm, int pin_dir) : 
+Wheel::Wheel(int pin_alpha, int pin_beta, int pin_pwm, int pin_dir) : 
     _encoder(pin_alpha, pin_beta),
     _motor(pin_pwm, pin_dir)
 {
-    _ppr_inv = 1.0 / ppr;
 }
 
-void Wheel::Init()
+void Wheel::Init(double radius, double ppr)
 {
-
+    _radius = radius;
+    _ppr_inv = 1.0 / ppr;
 }
 
 void Wheel::Update()
@@ -37,6 +37,7 @@ void Wheel::Update()
 
 void Wheel::Drive(double velocity)
 {
+    Serial.println(velocity);
     _velocity_target = velocity;
 }
 

@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "string": "cpp",
-        "initializer_list": "cpp"
+        "initializer_list": "cpp",
+        "cmath": "cpp"
     }
 }

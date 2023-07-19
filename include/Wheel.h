@@ -19,6 +19,7 @@ class Wheel
 
         PID _pid;
 
+        double _radius;
         double _ppr_inv;
 
         double _velocity_now;       // [rad/s]
@@ -28,10 +29,12 @@ class Wheel
         unsigned long _time_last;   // [ms]
     public:
         Wheel();
-        Wheel(int pin_alpha, int pin_beta, double ppr, int pin_pwm, int pin_dir);
-        void Init();
+        Wheel(int pin_alpha, int pin_beta, int pin_pwm, int pin_dir);
+
+        void Init(double radius, double ppr);
         void Update();
         void Drive(double velocity);
+
         double GetVelocity();
 };
 
