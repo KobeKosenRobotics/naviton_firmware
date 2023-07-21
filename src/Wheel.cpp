@@ -20,7 +20,10 @@ Wheel::Wheel(int pin_alpha, int pin_beta, int pin_pwm, int pin_dir) :
 /// @brief 
 /// @param radius 
 /// @param ppr 
-/// @param pid_params 
+/// @param loopTime
+/// @param max_power
+/// @param max_acceleration
+/// @param pid_params
 void Wheel::Init(double diameter, double ppr, double loopTime, double max_power, double max_acceleration, double pid_params[])
 {
     _diameter = diameter;
@@ -67,6 +70,7 @@ void Wheel::Stop()
 {
     _pid.ResetI();
     _motor.Stop();
+    _power = 0;
     _velocity_target = 0;
 }
 
