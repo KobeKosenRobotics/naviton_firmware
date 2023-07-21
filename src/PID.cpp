@@ -22,8 +22,8 @@ void PID::Init(double k_p, double k_i, double k_d, double k_b, double n, double 
 
 void PID::Update(double error)
 {
-    unsigned long time_now = millis();
-    double dt = (time_now - _time_last) * 0.001;
+    unsigned long time_now = micros();
+    double dt = (time_now - _time_last) * 1e-6;
     if(dt < _t) return;
 
     double p = _k_p * error;
