@@ -56,7 +56,7 @@ bool PS3I2C::GetClick(PS3Button button)
 {
     if(!IsConnected()) return false;
     int id = static_cast<int>(button);
-    return bitRead(_data_raw[id < 8 ? 6 : 7], id%8) && bitRead(_data_last[id < 8 ? 6 : 7], id%8);
+    return bitRead(_data_raw[id < 8 ? 6 : 7], id%8) && !bitRead(_data_last[id < 8 ? 6 : 7], id%8);
 }
 
 /// @brief 
