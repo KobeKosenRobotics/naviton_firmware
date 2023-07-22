@@ -6,6 +6,10 @@
 #ifndef WHEEL_H
 #define WHEEL_H
 
+#ifndef VELOCITY_TO_POWER_COEF
+#define VELOCITY_TO_POWER_COEF 0.1008           
+#endif
+
 #include <Encoder.h>
 
 #include "CytronMD.h"
@@ -32,7 +36,7 @@ class Wheel
 
         double _pulse_last;
         unsigned long _time_last;   // [ms]
-        double _velocity_old;
+        double _velocity_last;
     public:
         Wheel();
         Wheel(int pin_alpha, int pin_beta, int pin_pwm, int pin_dir);
