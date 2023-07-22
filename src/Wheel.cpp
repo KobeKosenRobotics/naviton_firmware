@@ -46,12 +46,13 @@ void Wheel::Update()
     _velocity_now = (pulse_now - _pulse_last) * M_PI * _ppr_inv * _diameter / dt;
     _acceleration = (_velocity_now - _velocity_last) / dt;
 
-    double velocity_diff = _velocity_now - _velocity_target;
+    double velocity_diff = _velocity_target - _velocity_now;
     _pid.Update(velocity_diff);
 
     _power += _pid.GetOutput() * dt;
     
-    float power_max = min(_power_max, _velocity_target / _diameter * VELOCITY_TO_POWER_COEF);
+    if(_power * _velocity_target < 0) _power = 0;
+    float power_max = min(_power_max, _velocity_target / _diameter * VELOCITY_TO_POWER_COEF + 0.1);
     _power = constrain(_power, -power_max, power_max);
     _motor.Drive(_power);
 

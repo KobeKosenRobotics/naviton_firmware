@@ -42,8 +42,8 @@ void DifferentialDrive::Update()
 void DifferentialDrive::Drive(double linear_velocity, double angular_velocity)
 {
     angular_velocity *= _footprint_width_2; // [rad/s] -> [m/s]
-    _wheel_l.Drive(linear_velocity - angular_velocity);
-    _wheel_r.Drive(-linear_velocity - angular_velocity);
+    _wheel_l.Drive(-linear_velocity + angular_velocity);
+    _wheel_r.Drive(linear_velocity + angular_velocity);
 }
 
 /// @brief 
