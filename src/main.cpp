@@ -7,6 +7,7 @@
 ros::NodeHandle nh;
 
 NavitonROS nvt;
+HOGE
 
 void setup()
 {
