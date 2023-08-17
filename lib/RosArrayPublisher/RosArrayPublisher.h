@@ -22,7 +22,7 @@ class RosArrayPublisher
         /// @param nh rosのノードハンドル
         /// @param topic_name publishするtopic名
         /// @param array_size publishする配列の要素数
-        RosArrayPublisher(ros::NodeHandle& nh,const char *topic_name,int array_size);
+        RosArrayPublisher(ros::NodeHandle& nh,const char *topic_name, int array_size);
 
         /// @brief publishする関数
         void Publish();
