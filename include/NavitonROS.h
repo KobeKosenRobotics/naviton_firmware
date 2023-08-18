@@ -12,6 +12,7 @@
 #include "config/RosParams.h"
 
 #include "Naviton.h"
+#include "NavitonStatePublisher.h"
 
 class NavitonROS : Naviton
 {
