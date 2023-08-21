@@ -54,7 +54,7 @@ void DifferentialDrive::Stop()
 }
 
 /// @brief 
-/// @return _linear_veloicity [m/s]
+/// @return _linear_velocity [m/s]
 double DifferentialDrive::GetLinearVelocity()
 {
     return _linear_velocity;
