@@ -2,17 +2,21 @@
 #define NAVITON_STATE_PUBLISHER_H
 
 #include <ros.h>
-#include <geometry_msgs/>
 #include <RosArrayPublisher.h>
 
 class NavitonStatePublisher
 {
     private:
-        RosArrayPublisher _publisher;
+        RosArrayPublisher<std_msgs::Float32MultiArray> _publisher;
     public:
         NavitonStatePublisher();
-        NavitonStatePublisher(ros::NodeHandle& nh,const char *topic_name);
+        NavitonStatePublisher(const char *topic_name);
+        
+        void Init(ros::NodeHandle& nh);
         void Publish();
+
+        void SetPosition(double x, double y, double z);
+        void SetRotation(double w, double x, double y, double z);
 };
 
 #endif
