@@ -6,6 +6,7 @@
     },
     "cmake.configureOnOpen": true,
     "cSpell.words": [
+        "COEF",
         "NAVITON"
     ]
 }
