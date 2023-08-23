@@ -5,7 +5,7 @@
 #define I2C_SDA 34
 
 #define PS3_WIRELESS_ADDRESS    0x73
-#define PS3_WIRELD_ADDRESS      0x74
+#define PS3_WIRED_ADDRESS      0x74
 
 #define BNO_ID                  -1
 #define BNO_ADDRESS             0x29

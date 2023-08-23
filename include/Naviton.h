@@ -14,6 +14,7 @@
 
 #include "PS3I2C.h"
 #include "DifferentialDrive.h"
+#include "Gyro.h"
 
 class Naviton
 {
@@ -21,6 +22,7 @@ class Naviton
         PS3I2C _ps3_wireless;
         PS3I2C _ps3_wired;
         DifferentialDrive _drive;
+        Gyro _gyro;
 
         bool _controller_mode = false; // false : wireless, true : wired
     public:
