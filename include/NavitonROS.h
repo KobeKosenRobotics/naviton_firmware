@@ -17,6 +17,7 @@
 class NavitonROS : Naviton
 {
     private:
+        NavitonStatePublisher _state_pub;
         ros::Subscriber<geometry_msgs::Twist, NavitonROS> _cmd_vel_sub;
         geometry_msgs::Twist _cmd_vel;
     public:
