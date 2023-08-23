@@ -8,7 +8,7 @@
 #define PS3_WIRED_ADDRESS      0x74
 
 #define BNO_ID                  -1
-#define BNO_ADDRESS             0x29
+#define BNO_ADDRESS             0x28
 
 #define EMERGENCY_STOP_PIN      22
 #define AUTO_MANUAL_SWITCH_PIN  30
