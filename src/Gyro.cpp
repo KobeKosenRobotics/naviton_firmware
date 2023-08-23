@@ -27,7 +27,11 @@ bool Gyro::Init()
 void Gyro::Update()
 {
     imu::Quaternion quat = _bno.getQuat();
-    CalcRPY(quat.w(), quat.x(), quat.y(), quat.z());
+    _w = quat.w();
+    _x = quat.x();
+    _y = quat.y();
+    _z = quat.z();
+    CalcRPY(_w, _x, _y, _z);
 }
 
 /// @brief 
@@ -71,4 +75,24 @@ double Gyro::GetPitch()
 double Gyro::GetYaw()
 {
     return _yaw;
+}
+
+double Gyro::GetW()
+{
+    return _w;
+}
+
+double Gyro::GetX()
+{
+    return _x;
+}
+
+double Gyro::GetY()
+{
+    return _y;
+}
+
+double Gyro::GetZ()
+{
+    return _z;
 }
