@@ -35,8 +35,8 @@ void NavitonStatePublisher::SetRotation(double w, double x, double y, double z)
     _publisher.array.data[6] = z;
 }
 
-void NavitonStatePublisher::SetWheelVelocity(double left, double right)
+void NavitonStatePublisher::SetLocalVelocity(double linear, double angular)
 {
-    _publisher.array.data[7] = left;
-    _publisher.array.data[8] = right;
+    _publisher.array.data[7] = linear;
+    _publisher.array.data[8] = angular;
 }

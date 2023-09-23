@@ -17,7 +17,7 @@ class NavitonStatePublisher
 
         void SetPosition(double x, double y, double z);
         void SetRotation(double w, double x, double y, double z);
-        void SetWheelVelocity(double left, double right);
+        void SetLocalVelocity(double linear, double angular);
 };
 
 #endif

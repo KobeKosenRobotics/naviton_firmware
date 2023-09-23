@@ -24,7 +24,7 @@ void NavitonROS::Update()
     _state_pub.SetPosition(_odom.GetX(), _odom.GetY(), _odom.GetZ());
     _state_pub.SetRotation(_gyro.GetW(), _gyro.GetX(), _gyro.GetY(), _gyro.GetZ());
 
-    _state_pub.SetWheelVelocity(_drive.GetLeftWheelVelocity(), _drive.GetRightWheelVelocity());
+    _state_pub.SetLocalVelocity(_drive.GetLinearVelocity(), _drive.GetAngularVelocity());
 
     _state_pub.Publish();
 }
