@@ -29,6 +29,9 @@ class DifferentialDrive
 
         double GetLinearVelocity();
         double GetAngularVelocity();
+
+        double GetLeftWheelVelocity();
+        double GetRightWheelVelocity();
 };
 
 #endif

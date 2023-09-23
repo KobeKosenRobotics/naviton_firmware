@@ -70,3 +70,13 @@ double DifferentialDrive::GetAngularVelocity()
 {
     return _angular_velocity;
 }
+
+double DifferentialDrive::GetLeftWheelVelocity()
+{
+    return _wheel_l.GetVelocity();
+}
+
+double DifferentialDrive::GetRightWheelVelocity()
+{
+    return _wheel_r.GetVelocity();
+}
