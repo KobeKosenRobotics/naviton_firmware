@@ -50,9 +50,15 @@ void Wheel::Update()
     _pid.Update(velocity_diff);
 
     _power += _pid.GetOutput() * dt;
+
+    if(_power * _velocity_target < 0)
+    {
+        _power = 0;
+        _pid.ResetI();
+    }
+
+    float power_max = min(_power_max, abs(_velocity_target) / _diameter * VELOCITY_TO_POWER_COEF + 0.1);
     
-    if(_power * _velocity_target < 0) _power = 0;
-    float power_max = min(_power_max, _velocity_target / _diameter * VELOCITY_TO_POWER_COEF + 0.1);
     _power = constrain(_power, -power_max, power_max);
     _motor.Drive(_power);
 

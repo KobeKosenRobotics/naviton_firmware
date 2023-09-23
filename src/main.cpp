@@ -10,12 +10,6 @@ NavitonROS nvt;
 
 void setup()
 {
-    pinMode(LED_BUILTIN, OUTPUT);
-    digitalWrite(LED_BUILTIN, HIGH);
-
-    Wire.setSCL(I2C_SCL);
-    Wire.setSDA(I2C_SDA);
-
     nh.initNode();
 
     nvt.Init(nh);
@@ -24,6 +18,7 @@ void setup()
 void loop()
 {
     nvt.Update();
+    nvt.UpdateInput();
 
     nh.spinOnce();
 }
