@@ -13,9 +13,14 @@ Naviton::Naviton() :
 
 void Naviton::Init()
 {
+    pinMode(LED_BUILTIN, OUTPUT);
+    digitalWrite(LED_BUILTIN, HIGH);
+
     pinMode(EMERGENCY_STOP_PIN, INPUT_PULLUP);
 
     Serial.begin(SERIAL_BAUDRATE);
+    Wire.setSCL(I2C_SCL);
+    Wire.setSDA(I2C_SDA);
 
     _ps3_wireless.Init();
     _ps3_wired.Init();
