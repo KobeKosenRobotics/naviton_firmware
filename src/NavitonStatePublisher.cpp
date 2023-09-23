@@ -6,7 +6,7 @@ NavitonStatePublisher::NavitonStatePublisher() :
 }
 
 NavitonStatePublisher::NavitonStatePublisher(const char *topic_name) : 
-    _publisher(topic_name, 7)
+    _publisher(topic_name, 9)
 {
 }
 
@@ -33,4 +33,10 @@ void NavitonStatePublisher::SetRotation(double w, double x, double y, double z)
     _publisher.array.data[4] = x;
     _publisher.array.data[5] = y;
     _publisher.array.data[6] = z;
+}
+
+void NavitonStatePublisher::SetWheelVelocity(double left, double right)
+{
+    _publisher.array.data[7] = left;
+    _publisher.array.data[8] = right;
 }
