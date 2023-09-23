@@ -25,8 +25,6 @@ void PS3I2C::Init(const int slave_address)
 {
     _slave_address = slave_address;
     Wire.begin();
-    Wire.setSCL(I2C_SCL);
-    Wire.setSDA(I2C_SDA);
 }
 
 /// @brief 

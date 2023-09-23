@@ -22,6 +22,7 @@ DifferentialDrive::DifferentialDrive(int pin_l[], int pin_r[]) :
 void DifferentialDrive::Init(double footprint_width, double wheel_radius, double ppr, double loopTime, double max_power, double max_acceleration, double pid_params[])
 {
     _footprint_width_2 = footprint_width * 0.5;
+    _footprint_width_inv = 1.0 / footprint_width;
     _wheel_l.Init(wheel_radius, ppr, loopTime, max_power, max_acceleration, pid_params);
     _wheel_r.Init(wheel_radius, ppr, loopTime, max_power, max_acceleration, pid_params);
 }
@@ -34,6 +35,9 @@ void DifferentialDrive::Update()
 
     double velocity_l = _wheel_l.GetVelocity();
     double velocity_r = _wheel_r.GetVelocity();
+
+    _linear_velocity = (- velocity_l + velocity_r) * 0.5;
+    _angular_velocity = (velocity_l + velocity_r) * _footprint_width_inv;
 }
 
 /// @brief Forward Kinematics
@@ -54,7 +58,7 @@ void DifferentialDrive::Stop()
 }
 
 /// @brief 
-/// @return _linear_veloicity [m/s]
+/// @return _linear_velocity [m/s]
 double DifferentialDrive::GetLinearVelocity()
 {
     return _linear_velocity;
@@ -65,4 +69,14 @@ double DifferentialDrive::GetLinearVelocity()
 double DifferentialDrive::GetAngularVelocity()
 {
     return _angular_velocity;
+}
+
+double DifferentialDrive::GetLeftWheelVelocity()
+{
+    return _wheel_l.GetVelocity();
+}
+
+double DifferentialDrive::GetRightWheelVelocity()
+{
+    return _wheel_r.GetVelocity();
 }

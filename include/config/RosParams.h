@@ -3,4 +3,6 @@
 
 #define CMD_VEL_TOPIC "cmd_vel"
 
+#define STATE_TOPIC "naviton/teensy_data"
+
 #endif
