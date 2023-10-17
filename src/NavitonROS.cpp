@@ -1,22 +1,32 @@
 #include "NavitonROS.h"
 
-NavitonROS::NavitonROS() : 
+NavitonROS::NavitonROS() :
     Naviton(),
+    _state_pub(STATE_TOPIC),
     _cmd_vel_sub(CMD_VEL_TOPIC, &NavitonROS::cmd_vel_cb, this)
 {
-    
 }
 
 void NavitonROS::Init(ros::NodeHandle& nh)
 {
     Naviton::Init();
+    _state_pub.Init(nh);
+
     pinMode(AUTO_MANUAL_SWITCH_PIN, INPUT_PULLUP);
+
     nh.subscribe(_cmd_vel_sub);
 }
 
 void NavitonROS::Update()
 {
     Naviton::Update();
+
+    _state_pub.SetPosition(_odom.GetX(), _odom.GetY(), _odom.GetZ());
+    _state_pub.SetRotation(_gyro.GetW(), _gyro.GetX(), _gyro.GetY(), _gyro.GetZ());
+
+    _state_pub.SetLocalVelocity(_drive.GetLinearVelocity(), _drive.GetAngularVelocity());
+
+    _state_pub.Publish();
 }
 
 void NavitonROS::UpdateInput()

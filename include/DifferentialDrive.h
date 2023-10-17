@@ -16,7 +16,8 @@ class DifferentialDrive
 
         double _linear_velocity, _angular_velocity;
 
-        double _footprint_width_2;                                                                  // [m]
+        double _footprint_width_2;     
+        double _footprint_width_inv;                                                             // [m]
     public:
         DifferentialDrive();
         DifferentialDrive(int pin_l[], int pin_r[]);
@@ -28,6 +29,9 @@ class DifferentialDrive
 
         double GetLinearVelocity();
         double GetAngularVelocity();
+
+        double GetLeftWheelVelocity();
+        double GetRightWheelVelocity();
 };
 
 #endif

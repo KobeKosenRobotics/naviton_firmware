@@ -22,8 +22,10 @@ void CytronMD::Attach(int pin_pwm, int pin_dir)
     _pin_pwm = pin_pwm;
     _pin_dir = pin_dir;
 
+    analogWriteFrequency(_pin_pwm, 20000);
     analogWrite(_pin_pwm, 0);
     pinMode(_pin_dir, OUTPUT);
+
     digitalWrite(_pin_dir, LOW);
 }
 
