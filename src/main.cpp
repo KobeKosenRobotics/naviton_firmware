@@ -8,6 +8,7 @@ ros::NodeHandle nh;
 
 NavitonROS nvt;
 
+
 void setup()
 {
     nh.initNode();
