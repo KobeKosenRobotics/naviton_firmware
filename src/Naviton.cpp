@@ -51,7 +51,19 @@ void Naviton::UpdateInput()
 
     if(digitalRead(EMERGENCY_STOP_PIN))
     {
-        //_drive.Drive();
+        double linear_vel = 0.0;
+        double angular_vel = 0.0;
+        if(_controller_mode)
+        {
+            linear_vel = map(_ps3_wired.GetAxis(PS3Axis::LY), 255, 0, -1.0, 1.0);
+            angular_vel = map(_ps3_wired.GetAxis(PS3Axis::RX), 255, 0, -1.0, 1.0);         
+        }
+        else
+        {
+            linear_vel = map(_ps3_wireless.GetAxis(PS3Axis::LY), 255, 0, -1.0, 1.0);
+            angular_vel = map(_ps3_wireless.GetAxis(PS3Axis::RX), 255, 0, -1.0, 1.0);            
+        }
+        _drive.Drive(linear_vel, angular_vel);   
     }
     else
     {
