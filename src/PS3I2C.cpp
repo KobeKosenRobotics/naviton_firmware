@@ -79,5 +79,8 @@ bool PS3I2C::GetPress(PS3Button button)
 /// @return 
 bool PS3I2C::IsConnected()
 {
+    Wire.beginTransmission(_slave_address);
+    byte status = Wire.endTransmission(false);
+    if(status != 0) return false;
     return bitRead(_data_raw[7], 7);
 }

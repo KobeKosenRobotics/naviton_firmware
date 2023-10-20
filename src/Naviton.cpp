@@ -26,6 +26,7 @@ void Naviton::Init()
     _ps3_wired.Init();
 
     _drive.Init(FOOTPRINT_WIDTH, WHEEL_DIAMETER, WHEEL_ENCODER_PPR, WHEEL_LOOP_TIME, WHEEL_MAX_POWER, WHEEL_MAX_ACCELERATION, new double[5]{WHEEL_PID_GAIN, WHEEL_PID_AW_GAIN, WHEEL_PID_DERIVATIVE_FILTER_COEF});
+    _drive.Stop();
 
     _gyro.Init();
 
@@ -44,6 +45,8 @@ void Naviton::Update()
     _gyro.Update();
 
     _odom.Update(_drive.GetLinearVelocity(), _gyro.GetYaw(), _gyro.GetPitch());
+
+    Serial.println(_drive.GetLeftWheelVelocity());
 }
 
 void Naviton::UpdateInput()
@@ -61,7 +64,7 @@ void Naviton::UpdateInput()
         linear_vel = map((double)_ps3_used->GetAxis(PS3Axis::LY), 255, 0, -1.0, 1.0);
         angular_vel = map((double)_ps3_used->GetAxis(PS3Axis::RX), 255, 0, -1.0, 1.0);
 
-        _drive.Drive(linear_vel, angular_vel);   
+        _drive.Drive(linear_vel, angular_vel);
     }
     else
     {
