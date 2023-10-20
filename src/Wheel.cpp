@@ -33,6 +33,7 @@ void Wheel::Init(double diameter, double ppr, double loopTime, double max_power,
 
     _pid.Init(pid_params[0], pid_params[1], pid_params[2], pid_params[3], pid_params[4], loopTime);
     _pid.SetSaturation(-max_acceleration, max_acceleration);
+    Stop();
 }
 
 /// @brief 

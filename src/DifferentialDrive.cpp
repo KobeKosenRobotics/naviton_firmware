@@ -25,6 +25,7 @@ void DifferentialDrive::Init(double footprint_width, double wheel_radius, double
     _footprint_width_inv = 1.0 / footprint_width;
     _wheel_l.Init(wheel_radius, ppr, loopTime, max_power, max_acceleration, pid_params);
     _wheel_r.Init(wheel_radius, ppr, loopTime, max_power, max_acceleration, pid_params);
+    Stop();
 }
 
 /// @brief Inverse Kinematics
