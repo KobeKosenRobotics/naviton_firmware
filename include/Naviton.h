@@ -22,6 +22,7 @@ class Naviton
     protected:
         PS3I2C _ps3_wireless;
         PS3I2C _ps3_wired;
+        PS3I2C *_ps3_used;
         DifferentialDrive _drive;
         Gyro _gyro;
         Odometer _odom;

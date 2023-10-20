@@ -30,6 +30,8 @@ void Naviton::Init()
     _gyro.Init();
 
     _odom.Init();
+
+    _ps3_used = nullptr;
 }
 
 void Naviton::Update()
@@ -46,23 +48,19 @@ void Naviton::Update()
 
 void Naviton::UpdateInput()
 {
-    if(_ps3_wireless.GetClick(SELECT)) _controller_mode = false;
-    else if(_ps3_wired.GetClick(SELECT)) _controller_mode = true;
+    if(_ps3_wireless.GetClick(SELECT)) _ps3_used = &_ps3_wireless;
+    else if(_ps3_wired.GetClick(SELECT)) _ps3_used = &_ps3_wired;
 
-    if(digitalRead(EMERGENCY_STOP_PIN))
+    if(!_ps3_used->IsConnected()) _ps3_used = nullptr;
+
+    if(digitalRead(EMERGENCY_STOP_PIN) && _ps3_used != nullptr)
     {
         double linear_vel = 0.0;
         double angular_vel = 0.0;
-        if(_controller_mode)
-        {
-            linear_vel = map(_ps3_wired.GetAxis(PS3Axis::LY), 255, 0, -1.0, 1.0);
-            angular_vel = map(_ps3_wired.GetAxis(PS3Axis::RX), 255, 0, -1.0, 1.0);         
-        }
-        else
-        {
-            linear_vel = map(_ps3_wireless.GetAxis(PS3Axis::LY), 255, 0, -1.0, 1.0);
-            angular_vel = map(_ps3_wireless.GetAxis(PS3Axis::RX), 255, 0, -1.0, 1.0);            
-        }
+        
+        linear_vel = map((double)_ps3_used->GetAxis(PS3Axis::LY), 255, 0, -1.0, 1.0);
+        angular_vel = map((double)_ps3_used->GetAxis(PS3Axis::RX), 255, 0, -1.0, 1.0);
+
         _drive.Drive(linear_vel, angular_vel);   
     }
     else
