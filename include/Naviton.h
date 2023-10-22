@@ -26,8 +26,6 @@ class Naviton
         DifferentialDrive _drive;
         Gyro _gyro;
         Odometer _odom;
-
-        bool _controller_mode = false; // false : wireless, true : wired
     public:
         Naviton();
         virtual void Init();
