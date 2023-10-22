@@ -60,9 +60,11 @@ void Naviton::UpdateInput()
     {
         double linear_vel = 0.0;
         double angular_vel = 0.0;
-        
-        linear_vel = map((double)_ps3_used->GetAxis(PS3Axis::LY), 255, 0, -1.0, 1.0);
-        angular_vel = map((double)_ps3_used->GetAxis(PS3Axis::RX), 255, 0, -1.0, 1.0);
+        double linear_vel_orig = map((double)_ps3_used->GetAxis(PS3Axis::LY), 255, 0, -MANUAL_MAX_LINEAR_VEL, MANUAL_MAX_LINEAR_VEL);
+        double angular_vel_orig = map((double)_ps3_used->GetAxis(PS3Axis::RX), 255, 0, -MANUAL_MAX_ANGULAR_VEL, MANUAL_MAX_ANGULAR_VEL);
+
+        (double)_ps3_used->GetAxis(PS3Axis::LY) >= MANUAL_MINIMUM_LINEAR_VEL ? linear_vel = linear_vel_orig : linear_vel = 0.0;
+        (double)_ps3_used->GetAxis(PS3Axis::LY) >= MANUAL_MINIMUM_ANGULAR_VEL ? angular_vel = angular_vel_orig : angular_vel = 0.0;
 
         _drive.Drive(linear_vel, angular_vel);
     }
