@@ -11,6 +11,7 @@
 
 #include "config/HardwareParams.h"
 #include "config/SoftwareParams.h"
+#include "config/ManualParams.h"
 
 #include "PS3I2C.h"
 #include "DifferentialDrive.h"

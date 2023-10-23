@@ -58,14 +58,13 @@ void Naviton::UpdateInput()
 
     if(digitalRead(EMERGENCY_STOP_PIN) && _ps3_used != nullptr)
     {
-        #include "config/ManualParams.h"
         double linear_vel = 0.0;
         double angular_vel = 0.0;
-        double linear_vel_orig = map((double)_ps3_used->GetAxis(PS3Axis::LY), 255, 0, -MAX_LINEAR_VELOCITY, MAX_LINEAR_VELOCITY);
-        double angular_vel_orig = map((double)_ps3_used->GetAxis(PS3Axis::RX), 255, 0, -MAX_ANGULAR_VELOCITY, MAX_ANGULAR_VELOCITY);
+        double linear_vel_rate = map((double)_ps3_used->GetAxis(PS3Axis::LY), 255, 0, -1.0, 1.0);
+        double angular_vel_rate = map((double)_ps3_used->GetAxis(PS3Axis::RX), 255, 0, -1.0, 1.0);
 
-        abs((double)_ps3_used->GetAxis(PS3Axis::LY)) >= DEAD_ZONE_PERCENTAGE ? linear_vel = linear_vel_orig : linear_vel = 0.0;
-        abs((double)_ps3_used->GetAxis(PS3Axis::LY)) >= DEAD_ZONE_PERCENTAGE ? angular_vel = angular_vel_orig : angular_vel = 0.0;
+        linear_vel = abs(linear_vel_rate) >= DEAD_ZONE_PERCENTAGE ? linear_vel_rate * MAX_LINEAR_VELOCITY : 0.0;
+        angular_vel = abs(angular_vel_rate) >= DEAD_ZONE_PERCENTAGE ? angular_vel_rate * MAX_ANGULAR_VELOCITY : 0.0;
 
         _drive.Drive(linear_vel, angular_vel);
     }
