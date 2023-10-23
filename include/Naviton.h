@@ -11,6 +11,7 @@
 
 #include "config/HardwareParams.h"
 #include "config/SoftwareParams.h"
+#include "config/ManualParams.h"
 
 #include "PS3I2C.h"
 #include "DifferentialDrive.h"
@@ -22,11 +23,10 @@ class Naviton
     protected:
         PS3I2C _ps3_wireless;
         PS3I2C _ps3_wired;
+        PS3I2C *_ps3_used;
         DifferentialDrive _drive;
         Gyro _gyro;
         Odometer _odom;
-
-        bool _controller_mode = false; // false : wireless, true : wired
     public:
         Naviton();
         virtual void Init();

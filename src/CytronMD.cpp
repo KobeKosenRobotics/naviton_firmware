@@ -26,7 +26,7 @@ void CytronMD::Attach(int pin_pwm, int pin_dir)
     analogWrite(_pin_pwm, 0);
     pinMode(_pin_dir, OUTPUT);
 
-    digitalWrite(_pin_dir, LOW);
+    Stop();
 }
 
 /// @brief 

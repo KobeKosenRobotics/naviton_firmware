@@ -26,10 +26,13 @@ void Naviton::Init()
     _ps3_wired.Init();
 
     _drive.Init(FOOTPRINT_WIDTH, WHEEL_DIAMETER, WHEEL_ENCODER_PPR, WHEEL_LOOP_TIME, WHEEL_MAX_POWER, WHEEL_MAX_ACCELERATION, new double[5]{WHEEL_PID_GAIN, WHEEL_PID_AW_GAIN, WHEEL_PID_DERIVATIVE_FILTER_COEF});
+    _drive.Stop();
 
     _gyro.Init();
 
     _odom.Init();
+
+    _ps3_used = nullptr;
 }
 
 void Naviton::Update()
@@ -42,16 +45,28 @@ void Naviton::Update()
     _gyro.Update();
 
     _odom.Update(_drive.GetLinearVelocity(), _gyro.GetYaw(), _gyro.GetPitch());
+
+    Serial.println(_drive.GetLeftWheelVelocity());
 }
 
 void Naviton::UpdateInput()
 {
-    if(_ps3_wireless.GetClick(SELECT)) _controller_mode = false;
-    else if(_ps3_wired.GetClick(SELECT)) _controller_mode = true;
+    if(_ps3_wireless.GetClick(SELECT)) _ps3_used = &_ps3_wireless;
+    else if(_ps3_wired.GetClick(SELECT)) _ps3_used = &_ps3_wired;
 
-    if(digitalRead(EMERGENCY_STOP_PIN))
+    if(!_ps3_used->IsConnected()) _ps3_used = nullptr;
+
+    if(digitalRead(EMERGENCY_STOP_PIN) && _ps3_used != nullptr)
     {
-        //_drive.Drive();
+        double linear_vel = 0.0;
+        double angular_vel = 0.0;
+        double linear_vel_rate = map((double)_ps3_used->GetAxis(PS3Axis::LY), 255, 0, -1.0, 1.0);
+        double angular_vel_rate = map((double)_ps3_used->GetAxis(PS3Axis::RX), 255, 0, -1.0, 1.0);
+
+        linear_vel = abs(linear_vel_rate) >= DEAD_ZONE_PERCENTAGE ? linear_vel_rate * MAX_LINEAR_VELOCITY : 0.0;
+        angular_vel = abs(angular_vel_rate) >= DEAD_ZONE_PERCENTAGE ? angular_vel_rate * MAX_ANGULAR_VELOCITY : 0.0;
+
+        _drive.Drive(linear_vel, angular_vel);
     }
     else
     {

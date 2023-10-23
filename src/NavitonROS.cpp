@@ -33,7 +33,7 @@ void NavitonROS::UpdateInput()
 {
     if(digitalRead(EMERGENCY_STOP_PIN))
     {
-        if(digitalRead(AUTO_MANUAL_SWITCH_PIN))
+        if(!digitalRead(AUTO_MANUAL_SWITCH_PIN))
         {
             // Auto
             _drive.Drive(_cmd_vel.linear.x, _cmd_vel.angular.z);
@@ -41,6 +41,7 @@ void NavitonROS::UpdateInput()
         else
         {
             // Manual
+            Naviton::UpdateInput();
         }
     }
     else

@@ -10,12 +10,12 @@
 #define BNO_ID                  -1
 #define BNO_ADDRESS             0x28
 
-#define EMERGENCY_STOP_PIN      22
+#define EMERGENCY_STOP_PIN      24
 #define AUTO_MANUAL_SWITCH_PIN  30
 
 // ENCODER_ALPHA, ENCODER_BETA, MD_PWM, MD_DIR
-#define LEFT_WHEEL_PINS     36,37,6,5
-#define RIGHT_WHEEL_PINS    15,16,8,7
+#define LEFT_WHEEL_PINS     36,37,20,21
+#define RIGHT_WHEEL_PINS    15,16,22,23
 
 #define FOOTPRINT_WIDTH 0.55
 #define WHEEL_DIAMETER 0.315

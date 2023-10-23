@@ -16,7 +16,10 @@ PS3I2C::PS3I2C(const int slave_address)
 /// @brief 
 void PS3I2C::Init()
 {
-
+    for(int i = 0; i < 8; i++)
+    {
+        _data_last[i] = 0;
+    }
 }
 
 /// @brief 
@@ -25,6 +28,11 @@ void PS3I2C::Init(const int slave_address)
 {
     _slave_address = slave_address;
     Wire.begin();
+
+    for(int i = 0; i < 8; i++)
+    {
+        _data_last[i] = 0;
+    }
 }
 
 /// @brief 
@@ -71,5 +79,8 @@ bool PS3I2C::GetPress(PS3Button button)
 /// @return 
 bool PS3I2C::IsConnected()
 {
+    Wire.beginTransmission(_slave_address);
+    byte status = Wire.endTransmission(false);
+    if(status != 0) return false;
     return bitRead(_data_raw[7], 7);
 }
