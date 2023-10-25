@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "doxygen Doxyfile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "clear": true,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            }
+        }
+    ]
+}
