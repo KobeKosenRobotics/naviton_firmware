@@ -1,0 +1,71 @@
+\doxysection{Ros\+Array\+Publisher\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_ros_array_publisher}{}\label{class_ros_array_publisher}\index{RosArrayPublisher$<$ T $>$@{RosArrayPublisher$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Ros\+Array\+Publisher.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ros_array_publisher_a414b5eca72a598e2b185c01c65be0486}\label{class_ros_array_publisher_a414b5eca72a598e2b185c01c65be0486} 
+{\bfseries Ros\+Array\+Publisher} ()
+\begin{DoxyCompactList}\small\item\em 空コンストラクラ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ros_array_publisher_ae093bc13d90adc7b250e18ec94d72f69}{Ros\+Array\+Publisher}} (const char \texorpdfstring{$\ast$}{*}topic\+\_\+name, int array\+\_\+size)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\Hypertarget{class_ros_array_publisher_ad27d47e222f61a36d87adef772497887}\label{class_ros_array_publisher_ad27d47e222f61a36d87adef772497887} 
+void {\bfseries Init} (ros\+::\+Node\+Handle \&nh)
+\begin{DoxyCompactList}\small\item\em advertiseする関数 \end{DoxyCompactList}\item 
+\Hypertarget{class_ros_array_publisher_abf5835915cbfa730f95e518419f48c5f}\label{class_ros_array_publisher_abf5835915cbfa730f95e518419f48c5f} 
+void {\bfseries Publish} ()
+\begin{DoxyCompactList}\small\item\em publishする関数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ros_array_publisher_a35b811cd2a3e443ea54a84a73684485b}\label{class_ros_array_publisher_a35b811cd2a3e443ea54a84a73684485b} 
+T {\bfseries array}
+\begin{DoxyCompactList}\small\item\em publishするデータを入れるオブジェクト array.\+data\mbox{[}1\mbox{]}のようにアクセスする \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ros_array_publisher_ac36a2d45d128bf26fb57cff6d9a8928e}\label{class_ros_array_publisher_ac36a2d45d128bf26fb57cff6d9a8928e} 
+ros\+::\+Publisher {\bfseries \+\_\+array\+\_\+pub}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Ros\+Array\+Publisher$<$ T $>$}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Publishする配列の型} & ~\newline
+ \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ros_array_publisher_ae093bc13d90adc7b250e18ec94d72f69}\label{class_ros_array_publisher_ae093bc13d90adc7b250e18ec94d72f69} 
+\index{RosArrayPublisher$<$ T $>$@{RosArrayPublisher$<$ T $>$}!RosArrayPublisher@{RosArrayPublisher}}
+\index{RosArrayPublisher@{RosArrayPublisher}!RosArrayPublisher$<$ T $>$@{RosArrayPublisher$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{RosArrayPublisher()}{RosArrayPublisher()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_ros_array_publisher}{Ros\+Array\+Publisher}}$<$ T $>$\mbox{\hyperlink{class_ros_array_publisher}{\+::\+Ros\+Array\+Publisher}} (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{topic\+\_\+name,  }\item[{int}]{array\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & rosのノードハンドル \\
+\hline
+{\em topic\+\_\+name} & publishするtopic名 \\
+\hline
+{\em array\+\_\+size} & publishする配列の要素数 \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_ros_array_publisher_8h}{Ros\+Array\+Publisher.\+h}}\end{DoxyCompactItemize}

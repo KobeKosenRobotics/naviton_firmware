@@ -1,0 +1,192 @@
+\doxysection{Wheel Class Reference}
+\hypertarget{class_wheel}{}\label{class_wheel}\index{Wheel@{Wheel}}
+
+
+Collaboration diagram for Wheel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_wheel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wheel_ab7ecfb7ffb40f405d45e8bd701311141}{Wheel}} (int pin\+\_\+alpha, int pin\+\_\+beta, int pin\+\_\+pwm, int pin\+\_\+dir)
+\item 
+void \mbox{\hyperlink{class_wheel_a37de93673963de8d24843e471f516f76}{Init}} (double diameter, double ppr, double loop\+Time, double max\+\_\+power, double max\+\_\+acceleration, double pid\+\_\+params\mbox{[}$\,$\mbox{]})
+\item 
+\Hypertarget{class_wheel_af621f7ddeb09129b27974ed86a9df084}\label{class_wheel_af621f7ddeb09129b27974ed86a9df084} 
+void {\bfseries Update} ()
+\item 
+void \mbox{\hyperlink{class_wheel_ade90ba0b91db0d8247a7b0d649f3a5e9}{Drive}} (double velocity)
+\item 
+\Hypertarget{class_wheel_a601366e817bee7b24df67d9e4e662a51}\label{class_wheel_a601366e817bee7b24df67d9e4e662a51} 
+void {\bfseries Stop} ()
+\item 
+double \mbox{\hyperlink{class_wheel_a5d1bdbc1ebeee8530ba76db3ddce7644}{Get\+Velocity}} ()
+\item 
+double \mbox{\hyperlink{class_wheel_a782691a24ce275931dbd389802e01bda}{Get\+Acceleration}} ()
+\item 
+double \mbox{\hyperlink{class_wheel_a7b36bb3a099bd2425f5328473acb747e}{Get\+Output}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_wheel_acca8dbbd88db9b4fc9b4d643ca1311ed}\label{class_wheel_acca8dbbd88db9b4fc9b4d643ca1311ed} 
+Encoder {\bfseries \+\_\+encoder}
+\item 
+\Hypertarget{class_wheel_a639cb503af66f07ddff3b879d95bba49}\label{class_wheel_a639cb503af66f07ddff3b879d95bba49} 
+\mbox{\hyperlink{class_cytron_m_d}{Cytron\+MD}} {\bfseries \+\_\+motor}
+\item 
+\Hypertarget{class_wheel_ac71327764769f8e956130c7c015338e9}\label{class_wheel_ac71327764769f8e956130c7c015338e9} 
+\mbox{\hyperlink{class_p_i_d}{PID}} {\bfseries \+\_\+pid}
+\item 
+\Hypertarget{class_wheel_acb3dd8d1d9da329172ffce8d40c7fd2b}\label{class_wheel_acb3dd8d1d9da329172ffce8d40c7fd2b} 
+double {\bfseries \+\_\+diameter}
+\item 
+\Hypertarget{class_wheel_a2526aad470d5f1b2bafc9f573ab7dee5}\label{class_wheel_a2526aad470d5f1b2bafc9f573ab7dee5} 
+double {\bfseries \+\_\+ppr\+\_\+inv}
+\item 
+\Hypertarget{class_wheel_adf1e7b88a658e6ecc0fcb78a3d2d7727}\label{class_wheel_adf1e7b88a658e6ecc0fcb78a3d2d7727} 
+double {\bfseries \+\_\+loop\+Time}
+\item 
+\Hypertarget{class_wheel_ad7526d09363849aa85a837985ffea7ae}\label{class_wheel_ad7526d09363849aa85a837985ffea7ae} 
+double {\bfseries \+\_\+power\+\_\+max}
+\item 
+\Hypertarget{class_wheel_a2dd7a796820cc1bc4fe63a0557e95c53}\label{class_wheel_a2dd7a796820cc1bc4fe63a0557e95c53} 
+double {\bfseries \+\_\+velocity\+\_\+now}
+\item 
+\Hypertarget{class_wheel_a93a35caa82458a373b6288686b59c3ce}\label{class_wheel_a93a35caa82458a373b6288686b59c3ce} 
+double {\bfseries \+\_\+velocity\+\_\+target}
+\item 
+\Hypertarget{class_wheel_aa5dedc54fd14eaceb012cb0575229d9f}\label{class_wheel_aa5dedc54fd14eaceb012cb0575229d9f} 
+double {\bfseries \+\_\+acceleration}
+\item 
+\Hypertarget{class_wheel_ad494d6acd5986bbf4aea8ac4f2d396ba}\label{class_wheel_ad494d6acd5986bbf4aea8ac4f2d396ba} 
+double {\bfseries \+\_\+power}
+\item 
+\Hypertarget{class_wheel_a150671a82c3a0af72d8039ed5b2c0b12}\label{class_wheel_a150671a82c3a0af72d8039ed5b2c0b12} 
+double {\bfseries \+\_\+pulse\+\_\+last}
+\item 
+\Hypertarget{class_wheel_a2a7211bd77e9a68249dd121a7106e0e0}\label{class_wheel_a2a7211bd77e9a68249dd121a7106e0e0} 
+unsigned long {\bfseries \+\_\+time\+\_\+last}
+\item 
+\Hypertarget{class_wheel_ad99e3f32cd732cb74cf5752b6b9f35f1}\label{class_wheel_ad99e3f32cd732cb74cf5752b6b9f35f1} 
+double {\bfseries \+\_\+velocity\+\_\+last}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_wheel_ab7ecfb7ffb40f405d45e8bd701311141}\label{class_wheel_ab7ecfb7ffb40f405d45e8bd701311141} 
+\index{Wheel@{Wheel}!Wheel@{Wheel}}
+\index{Wheel@{Wheel}!Wheel@{Wheel}}
+\doxysubsubsection{\texorpdfstring{Wheel()}{Wheel()}}
+{\footnotesize\ttfamily Wheel\+::\+Wheel (\begin{DoxyParamCaption}\item[{int}]{pin\+\_\+alpha,  }\item[{int}]{pin\+\_\+beta,  }\item[{int}]{pin\+\_\+pwm,  }\item[{int}]{pin\+\_\+dir }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+\_\+alpha} & \\
+\hline
+{\em pin\+\_\+beta} & \\
+\hline
+{\em pin\+\_\+pwm} & \\
+\hline
+{\em pin\+\_\+dir} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_wheel_ade90ba0b91db0d8247a7b0d649f3a5e9}\label{class_wheel_ade90ba0b91db0d8247a7b0d649f3a5e9} 
+\index{Wheel@{Wheel}!Drive@{Drive}}
+\index{Drive@{Drive}!Wheel@{Wheel}}
+\doxysubsubsection{\texorpdfstring{Drive()}{Drive()}}
+{\footnotesize\ttfamily void Wheel\+::\+Drive (\begin{DoxyParamCaption}\item[{double}]{velocity }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em velocity} & \mbox{[}m/s\mbox{]} \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{class_wheel_ade90ba0b91db0d8247a7b0d649f3a5e9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_wheel_a782691a24ce275931dbd389802e01bda}\label{class_wheel_a782691a24ce275931dbd389802e01bda} 
+\index{Wheel@{Wheel}!GetAcceleration@{GetAcceleration}}
+\index{GetAcceleration@{GetAcceleration}!Wheel@{Wheel}}
+\doxysubsubsection{\texorpdfstring{GetAcceleration()}{GetAcceleration()}}
+{\footnotesize\ttfamily double Wheel\+::\+Get\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\mbox{[}m/s\texorpdfstring{$^\wedge$}{\string^}2\mbox{]} 
+\end{DoxyReturn}
+\Hypertarget{class_wheel_a7b36bb3a099bd2425f5328473acb747e}\label{class_wheel_a7b36bb3a099bd2425f5328473acb747e} 
+\index{Wheel@{Wheel}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!Wheel@{Wheel}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily double Wheel\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\Hypertarget{class_wheel_a5d1bdbc1ebeee8530ba76db3ddce7644}\label{class_wheel_a5d1bdbc1ebeee8530ba76db3ddce7644} 
+\index{Wheel@{Wheel}!GetVelocity@{GetVelocity}}
+\index{GetVelocity@{GetVelocity}!Wheel@{Wheel}}
+\doxysubsubsection{\texorpdfstring{GetVelocity()}{GetVelocity()}}
+{\footnotesize\ttfamily double Wheel\+::\+Get\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\mbox{[}m/s\mbox{]} 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{class_wheel_a5d1bdbc1ebeee8530ba76db3ddce7644_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_wheel_a37de93673963de8d24843e471f516f76}\label{class_wheel_a37de93673963de8d24843e471f516f76} 
+\index{Wheel@{Wheel}!Init@{Init}}
+\index{Init@{Init}!Wheel@{Wheel}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Wheel\+::\+Init (\begin{DoxyParamCaption}\item[{double}]{diameter,  }\item[{double}]{ppr,  }\item[{double}]{loop\+Time,  }\item[{double}]{max\+\_\+power,  }\item[{double}]{max\+\_\+acceleration,  }\item[{double}]{pid\+\_\+params\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em radius} & \\
+\hline
+{\em ppr} & \\
+\hline
+{\em loop\+Time} & \\
+\hline
+{\em max\+\_\+power} & \\
+\hline
+{\em max\+\_\+acceleration} & \\
+\hline
+{\em pid\+\_\+params} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{class_wheel_a37de93673963de8d24843e471f516f76_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_wheel_8h}{Wheel.\+h}}\item 
+Wheel.\+cpp\end{DoxyCompactItemize}

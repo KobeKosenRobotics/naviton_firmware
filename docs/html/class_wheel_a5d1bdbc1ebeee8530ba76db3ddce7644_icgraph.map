@@ -1,0 +1,5 @@
+<map id="Wheel::GetVelocity" name="Wheel::GetVelocity">
+<area shape="rect" id="Node000001" title=" " alt="" coords="171,13,305,40"/>
+<area shape="rect" id="Node000002" href="$class_differential_drive.html#ad448332fb6991d33c9eed853764731ec" title="Inverse Kinematics." alt="" coords="5,5,123,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,29,123,29,123,24,155,24"/>
+</map>

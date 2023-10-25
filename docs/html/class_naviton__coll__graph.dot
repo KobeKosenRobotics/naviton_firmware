@@ -1,0 +1,22 @@
+digraph "Naviton"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="Naviton",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" _ps3_used\n_ps3_wired\n_ps3_wireless",fontcolor="grey" ];
+  Node2 [id="Node000002",label="PS3I2C",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_p_s3_i2_c.html",tooltip=" "];
+  Node3 -> Node1 [id="edge2_Node000001_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" _drive",fontcolor="grey" ];
+  Node3 [id="Node000003",label="DifferentialDrive",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_differential_drive.html",tooltip=" "];
+  Node4 -> Node3 [id="edge3_Node000003_Node000004",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" _wheel_l\n_wheel_r",fontcolor="grey" ];
+  Node4 [id="Node000004",label="Wheel",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_wheel.html",tooltip=" "];
+  Node5 -> Node4 [id="edge4_Node000004_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" _motor",fontcolor="grey" ];
+  Node5 [id="Node000005",label="CytronMD",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_cytron_m_d.html",tooltip=" "];
+  Node6 -> Node4 [id="edge5_Node000004_Node000006",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" _pid",fontcolor="grey" ];
+  Node6 [id="Node000006",label="PID",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_p_i_d.html",tooltip=" "];
+  Node7 -> Node1 [id="edge6_Node000001_Node000007",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" _gyro",fontcolor="grey" ];
+  Node7 [id="Node000007",label="Gyro",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_gyro.html",tooltip=" "];
+  Node8 -> Node1 [id="edge7_Node000001_Node000008",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" _odom",fontcolor="grey" ];
+  Node8 [id="Node000008",label="Odometer",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_odometer.html",tooltip=" "];
+}
