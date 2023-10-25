@@ -19,12 +19,12 @@ DifferentialDrive::DifferentialDrive(int pin_l[], int pin_r[]) :
 /// @param footprint_width 
 /// @param wheel_radius 
 /// @param ppr 
-void DifferentialDrive::Init(double footprint_width, double wheel_radius, double ppr, double loopTime, double max_power, double max_acceleration, double pid_params[])
+void DifferentialDrive::Init(double footprint_width, double wheel_radius, double ppr, double dt, double max_power, double pid_params[])
 {
     _footprint_width_2 = footprint_width * 0.5;
     _footprint_width_inv = 1.0 / footprint_width;
-    _wheel_l.Init(wheel_radius, ppr, loopTime, max_power, max_acceleration, pid_params);
-    _wheel_r.Init(wheel_radius, ppr, loopTime, max_power, max_acceleration, pid_params);
+    _wheel_l.Init(wheel_radius, ppr, dt, max_power, pid_params);
+    _wheel_r.Init(wheel_radius, ppr, dt, max_power, pid_params);
     Stop();
 }
 

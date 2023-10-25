@@ -11,7 +11,10 @@
 class PID
 {
     private:
-        double _k_p, _k_i, _k_d, _k_b, _k_f, _t;
+        double _k_p, _k_i, _k_d, _k_b, _k_f;
+
+        unsigned long _dt;
+        unsigned long _dt_real;
         unsigned long _time_last;
 
         double _i;
@@ -25,13 +28,13 @@ class PID
         double _output_max = +1e6;
     public:
         PID();
-        PID(double k_p, double k_i, double k_d, double k_b, double n, double t);
+        PID(double k_p, double k_i, double k_d, double k_b, double n, double dt);
         void Init();
-        void Init(double k_p, double k_i, double k_d, double k_b, double n, double t);
+        void Init(double k_p, double k_i, double k_d, double k_b, double n, double dt);
         void Update(double error);
         void ResetI();
         double GetOutput();
-        void SetGains(double k_p, double k_i, double k_d, double k_b, double n, double t);
+        void SetGains(double k_p, double k_i, double k_d, double k_b, double n, double dt);
         void SetSaturation(double output_min, double output_max);
 };
 

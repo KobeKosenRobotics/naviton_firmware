@@ -6,9 +6,8 @@
 #define WHEEL_LOOP_TIME                     0.05
 
 #define WHEEL_MAX_POWER                     1.0
-#define WHEEL_MAX_ACCELERATION              4.0
 
-#define WHEEL_PID_GAIN                      2.0,5.0,0.0
+#define WHEEL_PID_GAIN                      0.01,0.0,0.0
 #define WHEEL_PID_AW_GAIN                   1.0
 #define WHEEL_PID_DERIVATIVE_FILTER_COEF     0.01
 
