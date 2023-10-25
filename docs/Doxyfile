@@ -7,7 +7,8 @@ MARKDOWN_SUPPORT = YES
 GENERATE_HTML = YES
 HTML_OUTPUT = html
 INPUT = ../src ../include ../lib/RosArrayPublisher
-FILE_PATTERNS = *.md *.cpp *.h# RECURSIVE = YES
+FILE_PATTERNS = *.md *.cpp *.h
+RECURSIVE = YES
 SEARCH_INCLUDES = YES
 INCLUDE_PATH = ../include
 HAVE_DOT = YES
