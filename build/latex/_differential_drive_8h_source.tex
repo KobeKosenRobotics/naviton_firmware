@@ -1,0 +1,40 @@
+\doxysection{Differential\+Drive.\+h}
+\hypertarget{_differential_drive_8h_source}{}\label{_differential_drive_8h_source}\index{C:/Users/akiro/Desktop/清水研究室/naviton\_firmware/include/DifferentialDrive.h@{C:/Users/akiro/Desktop/清水研究室/naviton\_firmware/include/DifferentialDrive.h}}
+\mbox{\hyperlink{_differential_drive_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ DIFFERENTIAL\_DRIVE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ DIFFERENTIAL\_DRIVE\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_wheel_8h}{Wheel.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_differential_drive}{DifferentialDrive}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_wheel}{Wheel}}\ \_wheel\_l;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_wheel}{Wheel}}\ \_wheel\_r;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_linear\_velocity,\ \_angular\_velocity;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_footprint\_width\_2;\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_footprint\_width\_inv;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m]}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_differential_drive_a94d20ae590dea176e59931177b1f4cd5}{DifferentialDrive}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_differential_drive_a94d20ae590dea176e59931177b1f4cd5}{DifferentialDrive}}(\textcolor{keywordtype}{int}\ pin\_l[],\ \textcolor{keywordtype}{int}\ pin\_r[]);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_differential_drive_a3249661138416fb98bd3327e0e79a72a}{Init}}(\textcolor{keywordtype}{double}\ footprint\_width,\ \textcolor{keywordtype}{double}\ wheel\_radius,\ \textcolor{keywordtype}{double}\ ppr,\ \textcolor{keywordtype}{double}\ loopTime,\ \textcolor{keywordtype}{double}\ max\_power,\ \textcolor{keywordtype}{double}\ max\_acceleration,\ \textcolor{keywordtype}{double}\ pid\_params[]);\ \ \ \ \textcolor{comment}{//\ [m],\ [m],\ [],\ []}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_differential_drive_ad448332fb6991d33c9eed853764731ec}{Update}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_differential_drive_a1c5e7a9fec53c430cab91c436f14c28f}{Drive}}(\textcolor{keywordtype}{double}\ linear\_velocity,\ \textcolor{keywordtype}{double}\ angular\_velocity);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [m/s],\ [rad/s]}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Stop();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_differential_drive_ae3a35c13653f22c3ca82996ca9f72100}{GetLinearVelocity}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_differential_drive_a9da900ca92f4549c33cbf0b0b786280e}{GetAngularVelocity}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetLeftWheelVelocity();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetRightWheelVelocity();}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

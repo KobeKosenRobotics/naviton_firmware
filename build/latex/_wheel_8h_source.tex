@@ -1,0 +1,57 @@
+\doxysection{Wheel.\+h}
+\hypertarget{_wheel_8h_source}{}\label{_wheel_8h_source}\index{C:/Users/akiro/Desktop/清水研究室/naviton\_firmware/include/Wheel.h@{C:/Users/akiro/Desktop/清水研究室/naviton\_firmware/include/Wheel.h}}
+\mbox{\hyperlink{_wheel_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ WHEEL\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ WHEEL\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ VELOCITY\_TO\_POWER\_COEF}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ VELOCITY\_TO\_POWER\_COEF\ 0.1008\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Encoder.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_cytron_m_d_8h}{CytronMD.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_p_i_d_8h}{PID.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_wheel}{Wheel}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ Encoder\ \_encoder;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cytron_m_d}{CytronMD}}\ \_motor;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_p_i_d}{PID}}\ \_pid;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_diameter;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_ppr\_inv;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_loopTime;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_power\_max;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_velocity\_now;\ \ \ \ \ \ \ \textcolor{comment}{//\ [m/s]}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_velocity\_target;\ \ \ \ \textcolor{comment}{//\ [m/s]}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_acceleration;\ \ \ \ \ \ \ \textcolor{comment}{//\ [m/s\string^2]}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_power;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_pulse\_last;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \_time\_last;\ \ \ \textcolor{comment}{//\ [ms]}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_velocity\_last;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_wheel}{Wheel}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_wheel}{Wheel}}(\textcolor{keywordtype}{int}\ pin\_alpha,\ \textcolor{keywordtype}{int}\ pin\_beta,\ \textcolor{keywordtype}{int}\ pin\_pwm,\ \textcolor{keywordtype}{int}\ pin\_dir);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wheel_a37de93673963de8d24843e471f516f76}{Init}}(\textcolor{keywordtype}{double}\ diameter,\ \textcolor{keywordtype}{double}\ ppr,\ \textcolor{keywordtype}{double}\ loopTime,\ \textcolor{keywordtype}{double}\ max\_power,\ \textcolor{keywordtype}{double}\ max\_acceleration,\ \textcolor{keywordtype}{double}\ pid\_params[]);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wheel_ade90ba0b91db0d8247a7b0d649f3a5e9}{Drive}}(\textcolor{keywordtype}{double}\ velocity);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Stop();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_wheel_a5d1bdbc1ebeee8530ba76db3ddce7644}{GetVelocity}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_wheel_a782691a24ce275931dbd389802e01bda}{GetAcceleration}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_wheel_a7b36bb3a099bd2425f5328473acb747e}{GetOutput}}();}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

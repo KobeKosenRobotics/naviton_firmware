@@ -1,0 +1,115 @@
+\doxysection{Differential\+Drive Class Reference}
+\hypertarget{class_differential_drive}{}\label{class_differential_drive}\index{DifferentialDrive@{DifferentialDrive}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_differential_drive_a94d20ae590dea176e59931177b1f4cd5}\label{class_differential_drive_a94d20ae590dea176e59931177b1f4cd5} 
+{\bfseries Differential\+Drive} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_differential_drive_ad2d849461d7cb208c59c22164c3c56b2}{Differential\+Drive}} (int pin\+\_\+l\mbox{[}$\,$\mbox{]}, int pin\+\_\+r\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_differential_drive_a3249661138416fb98bd3327e0e79a72a}{Init}} (double footprint\+\_\+width, double wheel\+\_\+radius, double ppr, double loop\+Time, double max\+\_\+power, double max\+\_\+acceleration, double pid\+\_\+params\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Initialize. \end{DoxyCompactList}\item 
+\Hypertarget{class_differential_drive_ad448332fb6991d33c9eed853764731ec}\label{class_differential_drive_ad448332fb6991d33c9eed853764731ec} 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em Inverse Kinematics. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_differential_drive_a1c5e7a9fec53c430cab91c436f14c28f}{Drive}} (double linear\+\_\+velocity, double angular\+\_\+velocity)
+\begin{DoxyCompactList}\small\item\em Forward Kinematics. \end{DoxyCompactList}\item 
+\Hypertarget{class_differential_drive_ac771668b61e1fc4dc393c322f4464f00}\label{class_differential_drive_ac771668b61e1fc4dc393c322f4464f00} 
+void {\bfseries Stop} ()
+\item 
+double \mbox{\hyperlink{class_differential_drive_ae3a35c13653f22c3ca82996ca9f72100}{Get\+Linear\+Velocity}} ()
+\item 
+double \mbox{\hyperlink{class_differential_drive_a9da900ca92f4549c33cbf0b0b786280e}{Get\+Angular\+Velocity}} ()
+\item 
+\Hypertarget{class_differential_drive_a5c664acef3e8f4b7dd697b064fec3d2f}\label{class_differential_drive_a5c664acef3e8f4b7dd697b064fec3d2f} 
+double {\bfseries Get\+Left\+Wheel\+Velocity} ()
+\item 
+\Hypertarget{class_differential_drive_aee0c3e1b37f884e2954f14adcfd63073}\label{class_differential_drive_aee0c3e1b37f884e2954f14adcfd63073} 
+double {\bfseries Get\+Right\+Wheel\+Velocity} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_differential_drive_ad2d849461d7cb208c59c22164c3c56b2}\label{class_differential_drive_ad2d849461d7cb208c59c22164c3c56b2} 
+\index{DifferentialDrive@{DifferentialDrive}!DifferentialDrive@{DifferentialDrive}}
+\index{DifferentialDrive@{DifferentialDrive}!DifferentialDrive@{DifferentialDrive}}
+\doxysubsubsection{\texorpdfstring{DifferentialDrive()}{DifferentialDrive()}}
+{\footnotesize\ttfamily Differential\+Drive\+::\+Differential\+Drive (\begin{DoxyParamCaption}\item[{int}]{pin\+\_\+l\mbox{[}$\,$\mbox{]},  }\item[{int}]{pin\+\_\+r\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+\_\+l} & \\
+\hline
+{\em pin\+\_\+r} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_differential_drive_a1c5e7a9fec53c430cab91c436f14c28f}\label{class_differential_drive_a1c5e7a9fec53c430cab91c436f14c28f} 
+\index{DifferentialDrive@{DifferentialDrive}!Drive@{Drive}}
+\index{Drive@{Drive}!DifferentialDrive@{DifferentialDrive}}
+\doxysubsubsection{\texorpdfstring{Drive()}{Drive()}}
+{\footnotesize\ttfamily void Differential\+Drive\+::\+Drive (\begin{DoxyParamCaption}\item[{double}]{linear\+\_\+velocity,  }\item[{double}]{angular\+\_\+velocity }\end{DoxyParamCaption})}
+
+
+
+Forward Kinematics. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em linear\+\_\+velocity} & \mbox{[}m/s\mbox{]} \\
+\hline
+{\em angular\+\_\+velocity} & \mbox{[}rad/s\mbox{]} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_differential_drive_a9da900ca92f4549c33cbf0b0b786280e}\label{class_differential_drive_a9da900ca92f4549c33cbf0b0b786280e} 
+\index{DifferentialDrive@{DifferentialDrive}!GetAngularVelocity@{GetAngularVelocity}}
+\index{GetAngularVelocity@{GetAngularVelocity}!DifferentialDrive@{DifferentialDrive}}
+\doxysubsubsection{\texorpdfstring{GetAngularVelocity()}{GetAngularVelocity()}}
+{\footnotesize\ttfamily double Differential\+Drive\+::\+Get\+Angular\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\+\_\+angular\+\_\+velocity \mbox{[}rad/s\mbox{]} 
+\end{DoxyReturn}
+\Hypertarget{class_differential_drive_ae3a35c13653f22c3ca82996ca9f72100}\label{class_differential_drive_ae3a35c13653f22c3ca82996ca9f72100} 
+\index{DifferentialDrive@{DifferentialDrive}!GetLinearVelocity@{GetLinearVelocity}}
+\index{GetLinearVelocity@{GetLinearVelocity}!DifferentialDrive@{DifferentialDrive}}
+\doxysubsubsection{\texorpdfstring{GetLinearVelocity()}{GetLinearVelocity()}}
+{\footnotesize\ttfamily double Differential\+Drive\+::\+Get\+Linear\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\+\_\+linear\+\_\+velocity \mbox{[}m/s\mbox{]} 
+\end{DoxyReturn}
+\Hypertarget{class_differential_drive_a3249661138416fb98bd3327e0e79a72a}\label{class_differential_drive_a3249661138416fb98bd3327e0e79a72a} 
+\index{DifferentialDrive@{DifferentialDrive}!Init@{Init}}
+\index{Init@{Init}!DifferentialDrive@{DifferentialDrive}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Differential\+Drive\+::\+Init (\begin{DoxyParamCaption}\item[{double}]{footprint\+\_\+width,  }\item[{double}]{wheel\+\_\+radius,  }\item[{double}]{ppr,  }\item[{double}]{loop\+Time,  }\item[{double}]{max\+\_\+power,  }\item[{double}]{max\+\_\+acceleration,  }\item[{double}]{pid\+\_\+params\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Initialize. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em footprint\+\_\+width} & \\
+\hline
+{\em wheel\+\_\+radius} & \\
+\hline
+{\em ppr} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/akiro/\+Desktop/清水研究室/naviton\+\_\+firmware/include/\mbox{\hyperlink{_differential_drive_8h}{Differential\+Drive.\+h}}\item 
+C\+:/\+Users/akiro/\+Desktop/清水研究室/naviton\+\_\+firmware/src/Differential\+Drive.\+cpp\end{DoxyCompactItemize}
