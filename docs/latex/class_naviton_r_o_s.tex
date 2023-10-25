@@ -1,0 +1,103 @@
+\doxysection{Naviton\+ROS Class Reference}
+\hypertarget{class_naviton_r_o_s}{}\label{class_naviton_r_o_s}\index{NavitonROS@{NavitonROS}}
+
+
+Inheritance diagram for Naviton\+ROS\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{class_naviton_r_o_s__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Naviton\+ROS\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_naviton_r_o_s__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_naviton_r_o_s_a6907481804bf69981795a4fac2be3de9}\label{class_naviton_r_o_s_a6907481804bf69981795a4fac2be3de9} 
+void {\bfseries Init} (ros\+::\+Node\+Handle \&nh)
+\item 
+void \mbox{\hyperlink{class_naviton_r_o_s_ac3f1cf7ca20aafc1ae442d15a4f14128}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_naviton_r_o_s_a26a5dfb1d6536a1b96c949121e102701}{Update\+Input}} ()
+\item 
+\Hypertarget{class_naviton_r_o_s_ac5a2e1bc2f11dacb8aef5571571fea17}\label{class_naviton_r_o_s_ac5a2e1bc2f11dacb8aef5571571fea17} 
+void {\bfseries cmd\+\_\+vel\+\_\+cb} (const geometry\+\_\+msgs\+::\+Twist \&twist)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_naviton_r_o_s_a3732e02b32d7293c556c281c4a766125}\label{class_naviton_r_o_s_a3732e02b32d7293c556c281c4a766125} 
+bool {\bfseries use\+\_\+cmd\+\_\+vel}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_naviton_r_o_s_adeabd6d5278da9a682f59ce6b47712cd}\label{class_naviton_r_o_s_adeabd6d5278da9a682f59ce6b47712cd} 
+\mbox{\hyperlink{class_naviton_state_publisher}{Naviton\+State\+Publisher}} {\bfseries \+\_\+state\+\_\+pub}
+\item 
+\Hypertarget{class_naviton_r_o_s_acc000297b1b5df316396857a041c8623}\label{class_naviton_r_o_s_acc000297b1b5df316396857a041c8623} 
+ros\+::\+Subscriber$<$ geometry\+\_\+msgs\+::\+Twist, \mbox{\hyperlink{class_naviton_r_o_s}{Naviton\+ROS}} $>$ {\bfseries \+\_\+cmd\+\_\+vel\+\_\+sub}
+\item 
+\Hypertarget{class_naviton_r_o_s_a4cba90aa32468a740d4560b5e833614d}\label{class_naviton_r_o_s_a4cba90aa32468a740d4560b5e833614d} 
+geometry\+\_\+msgs\+::\+Twist {\bfseries \+\_\+cmd\+\_\+vel}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes inherited from \mbox{\hyperlink{class_naviton}{Naviton}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_p_s3_i2_c}{PS3\+I2C}} {\bfseries \+\_\+ps3\+\_\+wireless}
+\item 
+\mbox{\hyperlink{class_p_s3_i2_c}{PS3\+I2C}} {\bfseries \+\_\+ps3\+\_\+wired}
+\item 
+\mbox{\hyperlink{class_p_s3_i2_c}{PS3\+I2C}} \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+ps3\+\_\+used}
+\item 
+\mbox{\hyperlink{class_differential_drive}{Differential\+Drive}} {\bfseries \+\_\+drive}
+\item 
+\mbox{\hyperlink{class_gyro}{Gyro}} {\bfseries \+\_\+gyro}
+\item 
+\mbox{\hyperlink{class_odometer}{Odometer}} {\bfseries \+\_\+odom}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Private Member Functions inherited from \mbox{\hyperlink{class_naviton}{Naviton}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Init} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_naviton_r_o_s_ac3f1cf7ca20aafc1ae442d15a4f14128}\label{class_naviton_r_o_s_ac3f1cf7ca20aafc1ae442d15a4f14128} 
+\index{NavitonROS@{NavitonROS}!Update@{Update}}
+\index{Update@{Update}!NavitonROS@{NavitonROS}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Naviton\+ROS\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_naviton}{Naviton}}.
+
+\Hypertarget{class_naviton_r_o_s_a26a5dfb1d6536a1b96c949121e102701}\label{class_naviton_r_o_s_a26a5dfb1d6536a1b96c949121e102701} 
+\index{NavitonROS@{NavitonROS}!UpdateInput@{UpdateInput}}
+\index{UpdateInput@{UpdateInput}!NavitonROS@{NavitonROS}}
+\doxysubsubsection{\texorpdfstring{UpdateInput()}{UpdateInput()}}
+{\footnotesize\ttfamily void Naviton\+ROS\+::\+Update\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_naviton}{Naviton}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_naviton_r_o_s_8h}{Naviton\+ROS.\+h}}\item 
+Naviton\+ROS.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,50 @@
+\doxysection{Ros\+Array\+Publisher.\+h}
+\hypertarget{_ros_array_publisher_8h_source}{}\label{_ros_array_publisher_8h_source}\index{RosArrayPublisher.h@{RosArrayPublisher.h}}
+\mbox{\hyperlink{_ros_array_publisher_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ ROS\_ARRAY\_PUBLISHER\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ ROS\_ARRAY\_PUBLISHER\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <ros.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <std\_msgs/Float32MultiArray.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <std\_msgs/Int32MultiArray.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ros_array_publisher}{RosArrayPublisher}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ros_array_publisher_a414b5eca72a598e2b185c01c65be0486}{RosArrayPublisher}}()\ :\ \_array\_pub(\textcolor{stringliteral}{"{}"{}},\ \&\mbox{\hyperlink{class_ros_array_publisher_a35b811cd2a3e443ea54a84a73684485b}{array}})}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ros_array_publisher_ae093bc13d90adc7b250e18ec94d72f69}{RosArrayPublisher}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *topic\_name,\ \textcolor{keywordtype}{int}\ array\_size)\ :}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \_array\_pub(topic\_name,\ \&\mbox{\hyperlink{class_ros_array_publisher_a35b811cd2a3e443ea54a84a73684485b}{array}})}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ros_array_publisher_a35b811cd2a3e443ea54a84a73684485b}{array}}.data\ =\ \textcolor{keyword}{decltype}(\mbox{\hyperlink{class_ros_array_publisher_a35b811cd2a3e443ea54a84a73684485b}{array}}.data)(malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_ros_array_publisher_a35b811cd2a3e443ea54a84a73684485b}{array}}.data)\ *\ array\_size));}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ros_array_publisher_a35b811cd2a3e443ea54a84a73684485b}{array}}.data\_length\ =\ array\_size;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ array\_size;\ i++)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ros_array_publisher_a35b811cd2a3e443ea54a84a73684485b}{array}}.data[i]\ =\ 0.0;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ros_array_publisher_ad27d47e222f61a36d87adef772497887}{Init}}(ros::NodeHandle\&\ nh)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ nh.advertise(\_array\_pub);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ros_array_publisher_abf5835915cbfa730f95e518419f48c5f}{Publish}}()}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \_array\_pub.publish(\&\mbox{\hyperlink{class_ros_array_publisher_a35b811cd2a3e443ea54a84a73684485b}{array}});}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{class_ros_array_publisher_a35b811cd2a3e443ea54a84a73684485b}{array}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ ros::Publisher\ \_array\_pub;}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

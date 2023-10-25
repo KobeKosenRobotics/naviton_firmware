@@ -1,0 +1,9 @@
+<map id="RosArrayPublisher.h" name="RosArrayPublisher.h">
+<area shape="rect" id="Node000001" title="MultiArray publisher using rosserial." alt="" coords="107,5,247,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,56,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,35,71,75,69,70,150,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="80,80,275,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,33,180,64,175,64,175,33"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="299,80,479,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="215,30,338,72,337,77,213,35"/>
+</map>

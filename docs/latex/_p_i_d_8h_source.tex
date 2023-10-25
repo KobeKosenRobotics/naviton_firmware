@@ -1,0 +1,41 @@
+\doxysection{PID.\+h}
+\hypertarget{_p_i_d_8h_source}{}\label{_p_i_d_8h_source}\index{PID.h@{PID.h}}
+\mbox{\hyperlink{_p_i_d_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ PID\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ PID\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_p_i_d}{PID}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_k\_p,\ \_k\_i,\ \_k\_d,\ \_k\_b,\ \_k\_f,\ \_t;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \_time\_last;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_i;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_d;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_error\_last;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_awVal\_last;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_output;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_output\_min\ =\ -\/1e6;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_output\_max\ =\ +1e6;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_p_i_d}{PID}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_p_i_d}{PID}}(\textcolor{keywordtype}{double}\ k\_p,\ \textcolor{keywordtype}{double}\ k\_i,\ \textcolor{keywordtype}{double}\ k\_d,\ \textcolor{keywordtype}{double}\ k\_b,\ \textcolor{keywordtype}{double}\ n,\ \textcolor{keywordtype}{double}\ t);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Init();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Init(\textcolor{keywordtype}{double}\ k\_p,\ \textcolor{keywordtype}{double}\ k\_i,\ \textcolor{keywordtype}{double}\ k\_d,\ \textcolor{keywordtype}{double}\ k\_b,\ \textcolor{keywordtype}{double}\ n,\ \textcolor{keywordtype}{double}\ t);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(\textcolor{keywordtype}{double}\ error);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ResetI();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetOutput();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetGains(\textcolor{keywordtype}{double}\ k\_p,\ \textcolor{keywordtype}{double}\ k\_i,\ \textcolor{keywordtype}{double}\ k\_d,\ \textcolor{keywordtype}{double}\ k\_b,\ \textcolor{keywordtype}{double}\ n,\ \textcolor{keywordtype}{double}\ t);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetSaturation(\textcolor{keywordtype}{double}\ output\_min,\ \textcolor{keywordtype}{double}\ output\_max);}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

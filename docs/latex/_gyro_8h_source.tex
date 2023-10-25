@@ -1,0 +1,43 @@
+\doxysection{Gyro.\+h}
+\hypertarget{_gyro_8h_source}{}\label{_gyro_8h_source}\index{Gyro.h@{Gyro.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GYRO\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GYRO\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Adafruit\_BNO055.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ DEG2RAD}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ DEG2RAD\ 0.0174533}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ RAD2DEG}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ RAD2DEG\ 57.2958}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gyro}{Gyro}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ Adafruit\_BNO055\ \_bno;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_w,\ \_x,\ \_y,\ \_z;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_roll,\ \_pitch,\ \_yaw;\ \textcolor{comment}{//\ [rad]}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gyro_a0e964998e9b3904230349f4ee88e758f}{CalcRPY}}(\textcolor{keywordtype}{double}\ q0,\ \textcolor{keywordtype}{double}\ q1,\ \textcolor{keywordtype}{double}\ q2,\ \textcolor{keywordtype}{double}\ q3);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gyro}{Gyro}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gyro}{Gyro}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ address);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_gyro_a7ae704cad1bf8fbfbd0b54b255e5a603}{Init}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gyro_a74fcd1fc7bb46321b897d4a6063da684}{GetRoll}}();\ \ \ \textcolor{comment}{//\ [rad]}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gyro_ab5c87ccf3f91187f1b6fed16fa0178f0}{GetPitch}}();\ \ \textcolor{comment}{//\ [rad]}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gyro_afdedbfd0c37a17da953c89b35acbff30}{GetYaw}}();\ \ \ \ \textcolor{comment}{//\ [rad]}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetW();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetX();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetY();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetZ();}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

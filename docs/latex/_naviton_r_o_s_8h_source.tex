@@ -1,0 +1,37 @@
+\doxysection{Naviton\+ROS.\+h}
+\hypertarget{_naviton_r_o_s_8h_source}{}\label{_naviton_r_o_s_8h_source}\index{NavitonROS.h@{NavitonROS.h}}
+\mbox{\hyperlink{_naviton_r_o_s_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ NAVITON\_ROS\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ NAVITON\_ROS\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <ros.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <geometry\_msgs/Twist.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}config/RosParams.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_naviton_8h}{Naviton.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}NavitonStatePublisher.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_naviton_r_o_s}{NavitonROS}}\ :\ \mbox{\hyperlink{class_naviton}{Naviton}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_naviton_state_publisher}{NavitonStatePublisher}}\ \_state\_pub;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ ros::Subscriber<geometry\_msgs::Twist,\ NavitonROS>\ \_cmd\_vel\_sub;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ geometry\_msgs::Twist\ \_cmd\_vel;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_naviton_r_o_s}{NavitonROS}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Init(ros::NodeHandle\&\ nh);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateInput();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ cmd\_vel\_cb(\textcolor{keyword}{const}\ geometry\_msgs::Twist\&\ twist);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ use\_cmd\_vel;}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

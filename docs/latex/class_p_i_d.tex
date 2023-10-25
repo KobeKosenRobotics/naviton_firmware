@@ -1,0 +1,80 @@
+\doxysection{PID Class Reference}
+\hypertarget{class_p_i_d}{}\label{class_p_i_d}\index{PID@{PID}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_p_i_d_a79ea42cf4ce682a7055712f797e286a7}\label{class_p_i_d_a79ea42cf4ce682a7055712f797e286a7} 
+{\bfseries PID} (double k\+\_\+p, double k\+\_\+i, double k\+\_\+d, double k\+\_\+b, double n, double t)
+\item 
+\Hypertarget{class_p_i_d_abac0a73675a9a3361198d023341690b0}\label{class_p_i_d_abac0a73675a9a3361198d023341690b0} 
+void {\bfseries Init} ()
+\item 
+\Hypertarget{class_p_i_d_aa8586281fb83e92c0e04a7c5267486c4}\label{class_p_i_d_aa8586281fb83e92c0e04a7c5267486c4} 
+void {\bfseries Init} (double k\+\_\+p, double k\+\_\+i, double k\+\_\+d, double k\+\_\+b, double n, double t)
+\item 
+\Hypertarget{class_p_i_d_a36727128206a3881adc43ca7ef1b6434}\label{class_p_i_d_a36727128206a3881adc43ca7ef1b6434} 
+void {\bfseries Update} (double error)
+\item 
+\Hypertarget{class_p_i_d_ad30733129eb503380ea4d087c9d0ba51}\label{class_p_i_d_ad30733129eb503380ea4d087c9d0ba51} 
+void {\bfseries ResetI} ()
+\item 
+\Hypertarget{class_p_i_d_ad6bce59459764d56ba408a673fe0265a}\label{class_p_i_d_ad6bce59459764d56ba408a673fe0265a} 
+double {\bfseries Get\+Output} ()
+\item 
+\Hypertarget{class_p_i_d_acd8b6d5c8952ee6238ec91164c8a5794}\label{class_p_i_d_acd8b6d5c8952ee6238ec91164c8a5794} 
+void {\bfseries Set\+Gains} (double k\+\_\+p, double k\+\_\+i, double k\+\_\+d, double k\+\_\+b, double n, double t)
+\item 
+\Hypertarget{class_p_i_d_a5ccbf60191ba7758d992a0b695dcf1fa}\label{class_p_i_d_a5ccbf60191ba7758d992a0b695dcf1fa} 
+void {\bfseries Set\+Saturation} (double output\+\_\+min, double output\+\_\+max)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_p_i_d_a22f418dbf41b10af327b0bf150cd80fb}\label{class_p_i_d_a22f418dbf41b10af327b0bf150cd80fb} 
+double {\bfseries \+\_\+k\+\_\+p}
+\item 
+\Hypertarget{class_p_i_d_ac0363e51257a60b59c1e5a30d33a13b2}\label{class_p_i_d_ac0363e51257a60b59c1e5a30d33a13b2} 
+double {\bfseries \+\_\+k\+\_\+i}
+\item 
+\Hypertarget{class_p_i_d_aebfe666a6f2d233506ef2dabe195742f}\label{class_p_i_d_aebfe666a6f2d233506ef2dabe195742f} 
+double {\bfseries \+\_\+k\+\_\+d}
+\item 
+\Hypertarget{class_p_i_d_a91a0d6181186c8d92eb189da62c6e5c8}\label{class_p_i_d_a91a0d6181186c8d92eb189da62c6e5c8} 
+double {\bfseries \+\_\+k\+\_\+b}
+\item 
+\Hypertarget{class_p_i_d_ab2c88dfadcd534843aafd81362661705}\label{class_p_i_d_ab2c88dfadcd534843aafd81362661705} 
+double {\bfseries \+\_\+k\+\_\+f}
+\item 
+\Hypertarget{class_p_i_d_aa72542e578ae8f53783bc5432981e999}\label{class_p_i_d_aa72542e578ae8f53783bc5432981e999} 
+double {\bfseries \+\_\+t}
+\item 
+\Hypertarget{class_p_i_d_aa459ba2420fe02c0309bf95dd26d5861}\label{class_p_i_d_aa459ba2420fe02c0309bf95dd26d5861} 
+unsigned long {\bfseries \+\_\+time\+\_\+last}
+\item 
+\Hypertarget{class_p_i_d_a0e89f0a572fe0dc27699bde55bce90a7}\label{class_p_i_d_a0e89f0a572fe0dc27699bde55bce90a7} 
+double {\bfseries \+\_\+i}
+\item 
+\Hypertarget{class_p_i_d_a5a22ad9518a7776c836f57e0b0e3f121}\label{class_p_i_d_a5a22ad9518a7776c836f57e0b0e3f121} 
+double {\bfseries \+\_\+d}
+\item 
+\Hypertarget{class_p_i_d_ad04d95aaeeeef658c0bb613b9901f3b6}\label{class_p_i_d_ad04d95aaeeeef658c0bb613b9901f3b6} 
+double {\bfseries \+\_\+error\+\_\+last}
+\item 
+\Hypertarget{class_p_i_d_aab0b8544a9b361e9612b8f03d84da292}\label{class_p_i_d_aab0b8544a9b361e9612b8f03d84da292} 
+double {\bfseries \+\_\+aw\+Val\+\_\+last}
+\item 
+\Hypertarget{class_p_i_d_a076bee58e4ac5558a5652107540df0f4}\label{class_p_i_d_a076bee58e4ac5558a5652107540df0f4} 
+double {\bfseries \+\_\+output}
+\item 
+\Hypertarget{class_p_i_d_ad90102cb510c77936ddaa66ee670746f}\label{class_p_i_d_ad90102cb510c77936ddaa66ee670746f} 
+double {\bfseries \+\_\+output\+\_\+min} = -\/1e6
+\item 
+\Hypertarget{class_p_i_d_ae92bbdf009b309893d7b68c27aaaf467}\label{class_p_i_d_ae92bbdf009b309893d7b68c27aaaf467} 
+double {\bfseries \+\_\+output\+\_\+max} = +1e6
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_p_i_d_8h}{PID.\+h}}\item 
+PID.\+cpp\end{DoxyCompactItemize}

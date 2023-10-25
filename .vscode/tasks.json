@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "docs",
             "type": "shell",
             "command": "doxygen Doxyfile",
             "group": {
@@ -15,7 +15,7 @@
                 "panel": "shared"
             },
             "options": {
-                "cwd": "${workspaceRoot}/build"
+                "cwd": "${workspaceRoot}/docs"
             }
         }
     ]

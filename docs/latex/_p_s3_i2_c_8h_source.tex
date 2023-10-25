@@ -1,0 +1,74 @@
+\doxysection{PS3\+I2\+C.\+h}
+\hypertarget{_p_s3_i2_c_8h_source}{}\label{_p_s3_i2_c_8h_source}\index{PS3I2C.h@{PS3I2C.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ PS3\_I2C\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ PS3\_I2C\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ I2C\_SCL}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ I2C\_SCL\ 33}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ I2C\_SDA}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ I2C\_SDA\ 34}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{enum}\ PS3Axis}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ LY,}
+\DoxyCodeLine{00023\ \ \ \ \ LX,}
+\DoxyCodeLine{00024\ \ \ \ \ RY,}
+\DoxyCodeLine{00025\ \ \ \ \ RX,}
+\DoxyCodeLine{00026\ \ \ \ \ L2,}
+\DoxyCodeLine{00027\ \ \ \ \ R2}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{enum}\ PS3Button}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ CIRCLE,}
+\DoxyCodeLine{00033\ \ \ \ \ TRIANGLE,}
+\DoxyCodeLine{00034\ \ \ \ \ SQUARE,}
+\DoxyCodeLine{00035\ \ \ \ \ CROSS,}
+\DoxyCodeLine{00036\ \ \ \ \ UP,}
+\DoxyCodeLine{00037\ \ \ \ \ RIGHT,}
+\DoxyCodeLine{00038\ \ \ \ \ DOWN,}
+\DoxyCodeLine{00039\ \ \ \ \ LEFT,}
+\DoxyCodeLine{00040\ \ \ \ \ L1,}
+\DoxyCodeLine{00041\ \ \ \ \ R1,}
+\DoxyCodeLine{00042\ \ \ \ \ L3,}
+\DoxyCodeLine{00043\ \ \ \ \ R3,}
+\DoxyCodeLine{00044\ \ \ \ \ START,}
+\DoxyCodeLine{00045\ \ \ \ \ SELECT,}
+\DoxyCodeLine{00046\ \ \ \ \ PS}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_p_s3_i2_c}{PS3I2C}}}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_slave\_address\ =\ 0x73;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}\ \_data\_raw[8];}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}\ \_data\_last[8];}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_p_s3_i2_c}{PS3I2C}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_p_s3_i2_c}{PS3I2C}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ slave\_address);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Init();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Init(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ slave\_address);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}\ \mbox{\hyperlink{class_p_s3_i2_c_ae97e41296410563762f41cad43cb087b}{GetAxis}}(PS3Axis\ axis);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_p_s3_i2_c_af5fd11c375f0d3a6522aa28be9b117b1}{GetClick}}(PS3Button\ button);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_p_s3_i2_c_a075a3ced46f076dc07a2f241a128dd60}{GetPress}}(PS3Button\ button);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_p_s3_i2_c_a65a6d333d9fa94e0d36b9eae39692420}{IsConnected}}();}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

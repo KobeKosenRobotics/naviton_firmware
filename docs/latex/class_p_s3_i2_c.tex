@@ -1,0 +1,157 @@
+\doxysection{PS3\+I2C Class Reference}
+\hypertarget{class_p_s3_i2_c}{}\label{class_p_s3_i2_c}\index{PS3I2C@{PS3I2C}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_p_s3_i2_c_ab95daa94c37aa5db72e121432b55114d}{PS3\+I2C}} (const int slave\+\_\+address)
+\item 
+\Hypertarget{class_p_s3_i2_c_a140409d8e38cef3044bf0781b5ea448b}\label{class_p_s3_i2_c_a140409d8e38cef3044bf0781b5ea448b} 
+void {\bfseries Init} ()
+\item 
+void \mbox{\hyperlink{class_p_s3_i2_c_aabe441169537f6443f7a6bd7970eab0d}{Init}} (const int slave\+\_\+address)
+\item 
+\Hypertarget{class_p_s3_i2_c_a7bd692025c015f21c2a243373570b4d1}\label{class_p_s3_i2_c_a7bd692025c015f21c2a243373570b4d1} 
+void {\bfseries Update} ()
+\item 
+byte \mbox{\hyperlink{class_p_s3_i2_c_ae97e41296410563762f41cad43cb087b}{Get\+Axis}} (PS3\+Axis axis)
+\item 
+bool \mbox{\hyperlink{class_p_s3_i2_c_af5fd11c375f0d3a6522aa28be9b117b1}{Get\+Click}} (PS3\+Button button)
+\item 
+bool \mbox{\hyperlink{class_p_s3_i2_c_a075a3ced46f076dc07a2f241a128dd60}{Get\+Press}} (PS3\+Button button)
+\item 
+bool \mbox{\hyperlink{class_p_s3_i2_c_a65a6d333d9fa94e0d36b9eae39692420}{Is\+Connected}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_p_s3_i2_c_aa9e80119d02d220dde231fbfc8f6a457}\label{class_p_s3_i2_c_aa9e80119d02d220dde231fbfc8f6a457} 
+int {\bfseries \+\_\+slave\+\_\+address} = 0x73
+\item 
+\Hypertarget{class_p_s3_i2_c_a53226c77ef9958494fa420198b8c3565}\label{class_p_s3_i2_c_a53226c77ef9958494fa420198b8c3565} 
+byte {\bfseries \+\_\+data\+\_\+raw} \mbox{[}8\mbox{]}
+\item 
+\Hypertarget{class_p_s3_i2_c_aeb2f9e2218716f76ac382a49a5222a72}\label{class_p_s3_i2_c_aeb2f9e2218716f76ac382a49a5222a72} 
+byte {\bfseries \+\_\+data\+\_\+last} \mbox{[}8\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_p_s3_i2_c_ab95daa94c37aa5db72e121432b55114d}\label{class_p_s3_i2_c_ab95daa94c37aa5db72e121432b55114d} 
+\index{PS3I2C@{PS3I2C}!PS3I2C@{PS3I2C}}
+\index{PS3I2C@{PS3I2C}!PS3I2C@{PS3I2C}}
+\doxysubsubsection{\texorpdfstring{PS3I2C()}{PS3I2C()}}
+{\footnotesize\ttfamily PS3\+I2\+C\+::\+PS3\+I2C (\begin{DoxyParamCaption}\item[{const int}]{slave\+\_\+address }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em slave\+\_\+address} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_p_s3_i2_c_ae97e41296410563762f41cad43cb087b}\label{class_p_s3_i2_c_ae97e41296410563762f41cad43cb087b} 
+\index{PS3I2C@{PS3I2C}!GetAxis@{GetAxis}}
+\index{GetAxis@{GetAxis}!PS3I2C@{PS3I2C}}
+\doxysubsubsection{\texorpdfstring{GetAxis()}{GetAxis()}}
+{\footnotesize\ttfamily byte PS3\+I2\+C\+::\+Get\+Axis (\begin{DoxyParamCaption}\item[{PS3\+Axis}]{axis }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0\texorpdfstring{$\sim$}{\string~}255 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_p_s3_i2_c_ae97e41296410563762f41cad43cb087b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_p_s3_i2_c_af5fd11c375f0d3a6522aa28be9b117b1}\label{class_p_s3_i2_c_af5fd11c375f0d3a6522aa28be9b117b1} 
+\index{PS3I2C@{PS3I2C}!GetClick@{GetClick}}
+\index{GetClick@{GetClick}!PS3I2C@{PS3I2C}}
+\doxysubsubsection{\texorpdfstring{GetClick()}{GetClick()}}
+{\footnotesize\ttfamily bool PS3\+I2\+C\+::\+Get\+Click (\begin{DoxyParamCaption}\item[{PS3\+Button}]{button }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_p_s3_i2_c_af5fd11c375f0d3a6522aa28be9b117b1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_p_s3_i2_c_a075a3ced46f076dc07a2f241a128dd60}\label{class_p_s3_i2_c_a075a3ced46f076dc07a2f241a128dd60} 
+\index{PS3I2C@{PS3I2C}!GetPress@{GetPress}}
+\index{GetPress@{GetPress}!PS3I2C@{PS3I2C}}
+\doxysubsubsection{\texorpdfstring{GetPress()}{GetPress()}}
+{\footnotesize\ttfamily bool PS3\+I2\+C\+::\+Get\+Press (\begin{DoxyParamCaption}\item[{PS3\+Button}]{button }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_p_s3_i2_c_a075a3ced46f076dc07a2f241a128dd60_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_p_s3_i2_c_aabe441169537f6443f7a6bd7970eab0d}\label{class_p_s3_i2_c_aabe441169537f6443f7a6bd7970eab0d} 
+\index{PS3I2C@{PS3I2C}!Init@{Init}}
+\index{Init@{Init}!PS3I2C@{PS3I2C}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void PS3\+I2\+C\+::\+Init (\begin{DoxyParamCaption}\item[{const int}]{slave\+\_\+address }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em slave\+\_\+address} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_p_s3_i2_c_a65a6d333d9fa94e0d36b9eae39692420}\label{class_p_s3_i2_c_a65a6d333d9fa94e0d36b9eae39692420} 
+\index{PS3I2C@{PS3I2C}!IsConnected@{IsConnected}}
+\index{IsConnected@{IsConnected}!PS3I2C@{PS3I2C}}
+\doxysubsubsection{\texorpdfstring{IsConnected()}{IsConnected()}}
+{\footnotesize\ttfamily bool PS3\+I2\+C\+::\+Is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_p_s3_i2_c_a65a6d333d9fa94e0d36b9eae39692420_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+PS3\+I2\+C.\+h\item 
+PS3\+I2\+C.\+cpp\end{DoxyCompactItemize}

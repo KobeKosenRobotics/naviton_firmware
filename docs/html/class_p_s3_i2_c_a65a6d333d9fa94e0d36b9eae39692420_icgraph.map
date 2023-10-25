@@ -1,0 +1,9 @@
+<map id="PS3I2C::IsConnected" name="PS3I2C::IsConnected">
+<area shape="rect" id="Node000001" title=" " alt="" coords="182,56,327,83"/>
+<area shape="rect" id="Node000002" href="$class_p_s3_i2_c.html#ae97e41296410563762f41cad43cb087b" title=" " alt="" coords="9,5,130,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,54,120,35,122,30,189,49"/>
+<area shape="rect" id="Node000003" href="$class_p_s3_i2_c.html#af5fd11c375f0d3a6522aa28be9b117b1" title=" " alt="" coords="8,56,131,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="166,72,132,72,132,67,166,67"/>
+<area shape="rect" id="Node000004" href="$class_p_s3_i2_c.html#a075a3ced46f076dc07a2f241a128dd60" title=" " alt="" coords="5,107,134,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="189,90,122,109,120,103,188,85"/>
+</map>
