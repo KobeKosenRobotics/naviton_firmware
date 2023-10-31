@@ -55,19 +55,18 @@ void Wheel::Update()
     _velocity_now = (pulse_now - _pulse_last) * M_PI * _ppr_inv * _diameter * _dt_inv;
     _acceleration = (_velocity_now - _velocity_last) * _dt_inv;
 
-    _power = _velocity_target / _diameter * VELOCITY_TO_POWER_COEF;
-
     double velocity_diff = _velocity_target - _velocity_now;
-    _pid.SetSaturation(-_power_max + _power, _power_max - _power);
     _pid.Update(velocity_diff);
-    
-    _power += _pid.GetOutput();
+    double output_now = _pid.GetOutput();
+    _power += (output_now - _output_last);
 
-    _power = constrain(_power, -_power_max, _power_max);
+    double power_max = min(_power_max, abs(_velocity_target) * VELOCITY_TO_POWER_COEF);
+    _power = constrain(_power, -power_max, power_max);
     _motor.Drive(_power);
 
     _pulse_last = pulse_now;
     _velocity_last = _velocity_now;
+    _output_last = output_now;
 }
 
 /// @brief 

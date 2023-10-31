@@ -44,7 +44,7 @@ void Naviton::Update()
 
     _gyro.Update();
 
-    _odom.Update(_drive.GetLinearVelocity(), _gyro.GetYaw(), _gyro.GetPitch());
+    _odom.Update(_drive.GetLinearVelocity(), _gyro.GetYaw(), -_gyro.GetPitch());
 }
 
 void Naviton::UpdateInput()

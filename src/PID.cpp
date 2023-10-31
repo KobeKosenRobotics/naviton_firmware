@@ -29,7 +29,7 @@ void PID::Update(double error)
     _dt_real -= _dt;
 
     double p = _k_p * error;
-    _i = _k_i * (error + _error_last);
+    _i += _k_i * (error + _error_last);
     _d = _k_f * _d + _k_d * (error - _error_last);
 
     double u = p + _i + _d;

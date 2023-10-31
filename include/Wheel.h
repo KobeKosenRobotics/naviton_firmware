@@ -7,7 +7,7 @@
 #define WHEEL_H
 
 #ifndef VELOCITY_TO_POWER_COEF
-#define VELOCITY_TO_POWER_COEF 0.1008           
+#define VELOCITY_TO_POWER_COEF 1.0
 #endif
 
 #include <Encoder.h>
@@ -39,6 +39,7 @@ class Wheel
         double _pulse_last;
         unsigned long _time_last;   // [micros]
         double _velocity_last;
+        double _output_last;
 
         double _dt_inv;
     public:
