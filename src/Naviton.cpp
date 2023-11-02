@@ -16,7 +16,7 @@ void Naviton::Init()
     pinMode(LED_BUILTIN, OUTPUT);
     digitalWrite(LED_BUILTIN, HIGH);
 
-    pinMode(EMERGENCY_STOP_PIN, INPUT_PULLUP);
+    pinMode(EMERGENCY_STOP_PIN, INPUT);
 
     Serial.begin(SERIAL_BAUDRATE);
     Wire.setSCL(I2C_SCL);
@@ -45,6 +45,8 @@ void Naviton::Update()
     _gyro.Update();
 
     _odom.Update(_drive.GetLinearVelocity(), _gyro.GetYaw(), -_gyro.GetPitch());
+
+    digitalWrite(LED_BUILTIN, digitalRead(EMERGENCY_STOP_PIN));
 }
 
 void Naviton::UpdateInput()

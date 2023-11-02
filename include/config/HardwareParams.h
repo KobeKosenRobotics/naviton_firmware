@@ -10,7 +10,7 @@
 #define BNO_ID                  -1
 #define BNO_ADDRESS             0x28
 
-#define EMERGENCY_STOP_PIN      24
+#define EMERGENCY_STOP_PIN      26
 #define AUTO_MANUAL_SWITCH_PIN  30
 
 // ENCODER_ALPHA, ENCODER_BETA, MD_PWM, MD_DIR
