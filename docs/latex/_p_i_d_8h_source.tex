@@ -12,30 +12,33 @@
 \DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_p_i_d}{PID}}}
 \DoxyCodeLine{00012\ \{}
 \DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_k\_p,\ \_k\_i,\ \_k\_d,\ \_k\_b,\ \_k\_f,\ \_t;}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \_time\_last;}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_i;}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_d;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_k\_p,\ \_k\_i,\ \_k\_d,\ \_k\_b,\ \_k\_f;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \_dt;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \_dt\_real;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \_time\_last;}
 \DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_error\_last;}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_awVal\_last;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_i;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_d;}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_output;}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_output\_min\ =\ -\/1e6;}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_output\_max\ =\ +1e6;}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_p_i_d}{PID}}();}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_p_i_d}{PID}}(\textcolor{keywordtype}{double}\ k\_p,\ \textcolor{keywordtype}{double}\ k\_i,\ \textcolor{keywordtype}{double}\ k\_d,\ \textcolor{keywordtype}{double}\ k\_b,\ \textcolor{keywordtype}{double}\ n,\ \textcolor{keywordtype}{double}\ t);}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Init();}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Init(\textcolor{keywordtype}{double}\ k\_p,\ \textcolor{keywordtype}{double}\ k\_i,\ \textcolor{keywordtype}{double}\ k\_d,\ \textcolor{keywordtype}{double}\ k\_b,\ \textcolor{keywordtype}{double}\ n,\ \textcolor{keywordtype}{double}\ t);}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(\textcolor{keywordtype}{double}\ error);}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ResetI();}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetOutput();}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetGains(\textcolor{keywordtype}{double}\ k\_p,\ \textcolor{keywordtype}{double}\ k\_i,\ \textcolor{keywordtype}{double}\ k\_d,\ \textcolor{keywordtype}{double}\ k\_b,\ \textcolor{keywordtype}{double}\ n,\ \textcolor{keywordtype}{double}\ t);}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetSaturation(\textcolor{keywordtype}{double}\ output\_min,\ \textcolor{keywordtype}{double}\ output\_max);}
-\DoxyCodeLine{00036\ \};}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_error\_last;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_awVal\_last;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_output;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_output\_min\ =\ -\/1e6;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_output\_max\ =\ +1e6;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_p_i_d}{PID}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_p_i_d}{PID}}(\textcolor{keywordtype}{double}\ k\_p,\ \textcolor{keywordtype}{double}\ k\_i,\ \textcolor{keywordtype}{double}\ k\_d,\ \textcolor{keywordtype}{double}\ k\_b,\ \textcolor{keywordtype}{double}\ n,\ \textcolor{keywordtype}{double}\ dt);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Init();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Init(\textcolor{keywordtype}{double}\ k\_p,\ \textcolor{keywordtype}{double}\ k\_i,\ \textcolor{keywordtype}{double}\ k\_d,\ \textcolor{keywordtype}{double}\ k\_b,\ \textcolor{keywordtype}{double}\ n,\ \textcolor{keywordtype}{double}\ dt);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(\textcolor{keywordtype}{double}\ error);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ResetI();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetOutput();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetGains(\textcolor{keywordtype}{double}\ k\_p,\ \textcolor{keywordtype}{double}\ k\_i,\ \textcolor{keywordtype}{double}\ k\_d,\ \textcolor{keywordtype}{double}\ k\_b,\ \textcolor{keywordtype}{double}\ n,\ \textcolor{keywordtype}{double}\ dt);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetSaturation(\textcolor{keywordtype}{double}\ output\_min,\ \textcolor{keywordtype}{double}\ output\_max);}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

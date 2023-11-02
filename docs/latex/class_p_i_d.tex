@@ -3,14 +3,14 @@
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_p_i_d_a79ea42cf4ce682a7055712f797e286a7}\label{class_p_i_d_a79ea42cf4ce682a7055712f797e286a7} 
-{\bfseries PID} (double k\+\_\+p, double k\+\_\+i, double k\+\_\+d, double k\+\_\+b, double n, double t)
+\Hypertarget{class_p_i_d_a2a0367e50e3632a719cbe91496f0d8f9}\label{class_p_i_d_a2a0367e50e3632a719cbe91496f0d8f9} 
+{\bfseries PID} (double k\+\_\+p, double k\+\_\+i, double k\+\_\+d, double k\+\_\+b, double n, double dt)
 \item 
 \Hypertarget{class_p_i_d_abac0a73675a9a3361198d023341690b0}\label{class_p_i_d_abac0a73675a9a3361198d023341690b0} 
 void {\bfseries Init} ()
 \item 
-\Hypertarget{class_p_i_d_aa8586281fb83e92c0e04a7c5267486c4}\label{class_p_i_d_aa8586281fb83e92c0e04a7c5267486c4} 
-void {\bfseries Init} (double k\+\_\+p, double k\+\_\+i, double k\+\_\+d, double k\+\_\+b, double n, double t)
+\Hypertarget{class_p_i_d_a5b86466860f925adadc350f5b1f7d04b}\label{class_p_i_d_a5b86466860f925adadc350f5b1f7d04b} 
+void {\bfseries Init} (double k\+\_\+p, double k\+\_\+i, double k\+\_\+d, double k\+\_\+b, double n, double dt)
 \item 
 \Hypertarget{class_p_i_d_a36727128206a3881adc43ca7ef1b6434}\label{class_p_i_d_a36727128206a3881adc43ca7ef1b6434} 
 void {\bfseries Update} (double error)
@@ -21,8 +21,8 @@ void {\bfseries ResetI} ()
 \Hypertarget{class_p_i_d_ad6bce59459764d56ba408a673fe0265a}\label{class_p_i_d_ad6bce59459764d56ba408a673fe0265a} 
 double {\bfseries Get\+Output} ()
 \item 
-\Hypertarget{class_p_i_d_acd8b6d5c8952ee6238ec91164c8a5794}\label{class_p_i_d_acd8b6d5c8952ee6238ec91164c8a5794} 
-void {\bfseries Set\+Gains} (double k\+\_\+p, double k\+\_\+i, double k\+\_\+d, double k\+\_\+b, double n, double t)
+\Hypertarget{class_p_i_d_ad7398483eac4ce972fa4f7185ecbb102}\label{class_p_i_d_ad7398483eac4ce972fa4f7185ecbb102} 
+void {\bfseries Set\+Gains} (double k\+\_\+p, double k\+\_\+i, double k\+\_\+d, double k\+\_\+b, double n, double dt)
 \item 
 \Hypertarget{class_p_i_d_a5ccbf60191ba7758d992a0b695dcf1fa}\label{class_p_i_d_a5ccbf60191ba7758d992a0b695dcf1fa} 
 void {\bfseries Set\+Saturation} (double output\+\_\+min, double output\+\_\+max)
@@ -45,8 +45,11 @@ double {\bfseries \+\_\+k\+\_\+b}
 \Hypertarget{class_p_i_d_ab2c88dfadcd534843aafd81362661705}\label{class_p_i_d_ab2c88dfadcd534843aafd81362661705} 
 double {\bfseries \+\_\+k\+\_\+f}
 \item 
-\Hypertarget{class_p_i_d_aa72542e578ae8f53783bc5432981e999}\label{class_p_i_d_aa72542e578ae8f53783bc5432981e999} 
-double {\bfseries \+\_\+t}
+\Hypertarget{class_p_i_d_a763ee4835772c13d3a4cd26601155c2c}\label{class_p_i_d_a763ee4835772c13d3a4cd26601155c2c} 
+unsigned long {\bfseries \+\_\+dt}
+\item 
+\Hypertarget{class_p_i_d_ad173fb6045006650b5fc7aa51a68ec3a}\label{class_p_i_d_ad173fb6045006650b5fc7aa51a68ec3a} 
+unsigned long {\bfseries \+\_\+dt\+\_\+real}
 \item 
 \Hypertarget{class_p_i_d_aa459ba2420fe02c0309bf95dd26d5861}\label{class_p_i_d_aa459ba2420fe02c0309bf95dd26d5861} 
 unsigned long {\bfseries \+\_\+time\+\_\+last}

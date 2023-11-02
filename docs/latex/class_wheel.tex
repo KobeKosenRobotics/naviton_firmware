@@ -14,7 +14,7 @@ Collaboration diagram for Wheel\+:\nopagebreak
 \item 
 \mbox{\hyperlink{class_wheel_ab7ecfb7ffb40f405d45e8bd701311141}{Wheel}} (int pin\+\_\+alpha, int pin\+\_\+beta, int pin\+\_\+pwm, int pin\+\_\+dir)
 \item 
-void \mbox{\hyperlink{class_wheel_a37de93673963de8d24843e471f516f76}{Init}} (double diameter, double ppr, double loop\+Time, double max\+\_\+power, double max\+\_\+acceleration, double pid\+\_\+params\mbox{[}$\,$\mbox{]})
+void \mbox{\hyperlink{class_wheel_a73a90efc6a029647cd272f1408cbe235}{Init}} (double diameter, double ppr, double dt, double max\+\_\+power, double pid\+\_\+params\mbox{[}$\,$\mbox{]})
 \item 
 \Hypertarget{class_wheel_af621f7ddeb09129b27974ed86a9df084}\label{class_wheel_af621f7ddeb09129b27974ed86a9df084} 
 void {\bfseries Update} ()
@@ -48,11 +48,14 @@ double {\bfseries \+\_\+diameter}
 \Hypertarget{class_wheel_a2526aad470d5f1b2bafc9f573ab7dee5}\label{class_wheel_a2526aad470d5f1b2bafc9f573ab7dee5} 
 double {\bfseries \+\_\+ppr\+\_\+inv}
 \item 
-\Hypertarget{class_wheel_adf1e7b88a658e6ecc0fcb78a3d2d7727}\label{class_wheel_adf1e7b88a658e6ecc0fcb78a3d2d7727} 
-double {\bfseries \+\_\+loop\+Time}
-\item 
 \Hypertarget{class_wheel_ad7526d09363849aa85a837985ffea7ae}\label{class_wheel_ad7526d09363849aa85a837985ffea7ae} 
 double {\bfseries \+\_\+power\+\_\+max}
+\item 
+\Hypertarget{class_wheel_aa2929cad5c72f5c8f38c729d075be780}\label{class_wheel_aa2929cad5c72f5c8f38c729d075be780} 
+unsigned long {\bfseries \+\_\+dt}
+\item 
+\Hypertarget{class_wheel_a36e163f89ec59ff0a0596bf1f849d626}\label{class_wheel_a36e163f89ec59ff0a0596bf1f849d626} 
+unsigned long {\bfseries \+\_\+dt\+\_\+real}
 \item 
 \Hypertarget{class_wheel_a2dd7a796820cc1bc4fe63a0557e95c53}\label{class_wheel_a2dd7a796820cc1bc4fe63a0557e95c53} 
 double {\bfseries \+\_\+velocity\+\_\+now}
@@ -74,6 +77,12 @@ unsigned long {\bfseries \+\_\+time\+\_\+last}
 \item 
 \Hypertarget{class_wheel_ad99e3f32cd732cb74cf5752b6b9f35f1}\label{class_wheel_ad99e3f32cd732cb74cf5752b6b9f35f1} 
 double {\bfseries \+\_\+velocity\+\_\+last}
+\item 
+\Hypertarget{class_wheel_ab3a717295ee7f135cb9e99b08b375dce}\label{class_wheel_ab3a717295ee7f135cb9e99b08b375dce} 
+double {\bfseries \+\_\+output\+\_\+last}
+\item 
+\Hypertarget{class_wheel_aa17540afad32b87fb050887f3b4bc0fd}\label{class_wheel_aa17540afad32b87fb050887f3b4bc0fd} 
+double {\bfseries \+\_\+dt\+\_\+inv}
 \end{DoxyCompactItemize}
 
 
@@ -152,11 +161,11 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=305pt]{class_wheel_a5d1bdbc1ebeee8530ba76db3ddce7644_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_wheel_a37de93673963de8d24843e471f516f76}\label{class_wheel_a37de93673963de8d24843e471f516f76} 
+\Hypertarget{class_wheel_a73a90efc6a029647cd272f1408cbe235}\label{class_wheel_a73a90efc6a029647cd272f1408cbe235} 
 \index{Wheel@{Wheel}!Init@{Init}}
 \index{Init@{Init}!Wheel@{Wheel}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void Wheel\+::\+Init (\begin{DoxyParamCaption}\item[{double}]{diameter,  }\item[{double}]{ppr,  }\item[{double}]{loop\+Time,  }\item[{double}]{max\+\_\+power,  }\item[{double}]{max\+\_\+acceleration,  }\item[{double}]{pid\+\_\+params\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Wheel\+::\+Init (\begin{DoxyParamCaption}\item[{double}]{diameter,  }\item[{double}]{ppr,  }\item[{double}]{dt,  }\item[{double}]{max\+\_\+power,  }\item[{double}]{pid\+\_\+params\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
@@ -173,11 +182,12 @@ Here is the caller graph for this function\+:\nopagebreak
 {\em pid\+\_\+params} & \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=279pt]{class_wheel_a37de93673963de8d24843e471f516f76_icgraph}
+\includegraphics[width=279pt]{class_wheel_a73a90efc6a029647cd272f1408cbe235_icgraph}
 \end{center}
 \end{figure}
 

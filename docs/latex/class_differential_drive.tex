@@ -17,7 +17,7 @@ Collaboration diagram for Differential\+Drive\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_differential_drive_ad2d849461d7cb208c59c22164c3c56b2}{Differential\+Drive}} (int pin\+\_\+l\mbox{[}$\,$\mbox{]}, int pin\+\_\+r\mbox{[}$\,$\mbox{]})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_differential_drive_a3249661138416fb98bd3327e0e79a72a}{Init}} (double footprint\+\_\+width, double wheel\+\_\+radius, double ppr, double loop\+Time, double max\+\_\+power, double max\+\_\+acceleration, double pid\+\_\+params\mbox{[}$\,$\mbox{]})
+void \mbox{\hyperlink{class_differential_drive_a3180d36913b354f22d1aa32f11ee0434}{Init}} (double footprint\+\_\+width, double wheel\+\_\+radius, double ppr, double dt, double max\+\_\+power, double pid\+\_\+params\mbox{[}$\,$\mbox{]})
 \begin{DoxyCompactList}\small\item\em Initialize. \end{DoxyCompactList}\item 
 \Hypertarget{class_differential_drive_ad448332fb6991d33c9eed853764731ec}\label{class_differential_drive_ad448332fb6991d33c9eed853764731ec} 
 void {\bfseries Update} ()
@@ -124,11 +124,11 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{DoxyReturn}{Returns}
 \+\_\+linear\+\_\+velocity \mbox{[}m/s\mbox{]} 
 \end{DoxyReturn}
-\Hypertarget{class_differential_drive_a3249661138416fb98bd3327e0e79a72a}\label{class_differential_drive_a3249661138416fb98bd3327e0e79a72a} 
+\Hypertarget{class_differential_drive_a3180d36913b354f22d1aa32f11ee0434}\label{class_differential_drive_a3180d36913b354f22d1aa32f11ee0434} 
 \index{DifferentialDrive@{DifferentialDrive}!Init@{Init}}
 \index{Init@{Init}!DifferentialDrive@{DifferentialDrive}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void Differential\+Drive\+::\+Init (\begin{DoxyParamCaption}\item[{double}]{footprint\+\_\+width,  }\item[{double}]{wheel\+\_\+radius,  }\item[{double}]{ppr,  }\item[{double}]{loop\+Time,  }\item[{double}]{max\+\_\+power,  }\item[{double}]{max\+\_\+acceleration,  }\item[{double}]{pid\+\_\+params\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Differential\+Drive\+::\+Init (\begin{DoxyParamCaption}\item[{double}]{footprint\+\_\+width,  }\item[{double}]{wheel\+\_\+radius,  }\item[{double}]{ppr,  }\item[{double}]{dt,  }\item[{double}]{max\+\_\+power,  }\item[{double}]{pid\+\_\+params\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
 
 
@@ -144,11 +144,12 @@ Initialize.
  \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=279pt]{class_differential_drive_a3249661138416fb98bd3327e0e79a72a_cgraph}
+\includegraphics[width=279pt]{class_differential_drive_a3180d36913b354f22d1aa32f11ee0434_cgraph}
 \end{center}
 \end{figure}
 

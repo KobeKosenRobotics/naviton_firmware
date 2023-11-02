@@ -100,9 +100,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2d849461d7cb208c59c22164c3c56b2" id="r_ad2d849461d7cb208c59c22164c3c56b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_differential_drive.html#ad2d849461d7cb208c59c22164c3c56b2">DifferentialDrive</a> (int pin_l[], int pin_r[])</td></tr>
 <tr class="memdesc:ad2d849461d7cb208c59c22164c3c56b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
 <tr class="separator:ad2d849461d7cb208c59c22164c3c56b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3249661138416fb98bd3327e0e79a72a" id="r_a3249661138416fb98bd3327e0e79a72a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_differential_drive.html#a3249661138416fb98bd3327e0e79a72a">Init</a> (double footprint_width, double wheel_radius, double ppr, double loopTime, double max_power, double max_acceleration, double pid_params[])</td></tr>
-<tr class="memdesc:a3249661138416fb98bd3327e0e79a72a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize.  <br /></td></tr>
-<tr class="separator:a3249661138416fb98bd3327e0e79a72a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3180d36913b354f22d1aa32f11ee0434" id="r_a3180d36913b354f22d1aa32f11ee0434"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_differential_drive.html#a3180d36913b354f22d1aa32f11ee0434">Init</a> (double footprint_width, double wheel_radius, double ppr, double dt, double max_power, double pid_params[])</td></tr>
+<tr class="memdesc:a3180d36913b354f22d1aa32f11ee0434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize.  <br /></td></tr>
+<tr class="separator:a3180d36913b354f22d1aa32f11ee0434"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad448332fb6991d33c9eed853764731ec" id="r_ad448332fb6991d33c9eed853764731ec"><td class="memItemLeft" align="right" valign="top"><a id="ad448332fb6991d33c9eed853764731ec" name="ad448332fb6991d33c9eed853764731ec"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> ()</td></tr>
 <tr class="memdesc:ad448332fb6991d33c9eed853764731ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse Kinematics. <br /></td></tr>
@@ -268,8 +268,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a3249661138416fb98bd3327e0e79a72a" name="a3249661138416fb98bd3327e0e79a72a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3249661138416fb98bd3327e0e79a72a">&#9670;&#160;</a></span>Init()</h2>
+<a id="a3180d36913b354f22d1aa32f11ee0434" name="a3180d36913b354f22d1aa32f11ee0434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3180d36913b354f22d1aa32f11ee0434">&#9670;&#160;</a></span>Init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,19 +296,13 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>loopTime</em>, </td>
+          <td class="paramname"><em>dt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>max_power</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>max_acceleration</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -337,10 +331,10 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_differential_drive_a3249661138416fb98bd3327e0e79a72a_cgraph.png" border="0" usemap="#aclass_differential_drive_a3249661138416fb98bd3327e0e79a72a_cgraph" alt=""/></div>
-<map name="aclass_differential_drive_a3249661138416fb98bd3327e0e79a72a_cgraph" id="aclass_differential_drive_a3249661138416fb98bd3327e0e79a72a_cgraph">
+<div class="center"><img src="class_differential_drive_a3180d36913b354f22d1aa32f11ee0434_cgraph.png" border="0" usemap="#aclass_differential_drive_a3180d36913b354f22d1aa32f11ee0434_cgraph" alt=""/></div>
+<map name="aclass_differential_drive_a3180d36913b354f22d1aa32f11ee0434_cgraph" id="aclass_differential_drive_a3180d36913b354f22d1aa32f11ee0434_cgraph">
 <area shape="rect" title="Initialize." alt="" coords="5,5,140,32"/>
-<area shape="rect" href="class_wheel.html#a37de93673963de8d24843e471f516f76" title=" " alt="" coords="188,5,271,32"/>
+<area shape="rect" href="class_wheel.html#a73a90efc6a029647cd272f1408cbe235" title=" " alt="" coords="188,5,271,32"/>
 <area shape="poly" title=" " alt="" coords="140,16,172,16,172,21,140,21"/>
 </map>
 </div>

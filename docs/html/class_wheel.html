@@ -93,8 +93,8 @@ Collaboration diagram for Wheel:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab7ecfb7ffb40f405d45e8bd701311141" id="r_ab7ecfb7ffb40f405d45e8bd701311141"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wheel.html#ab7ecfb7ffb40f405d45e8bd701311141">Wheel</a> (int pin_alpha, int pin_beta, int pin_pwm, int pin_dir)</td></tr>
 <tr class="separator:ab7ecfb7ffb40f405d45e8bd701311141"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37de93673963de8d24843e471f516f76" id="r_a37de93673963de8d24843e471f516f76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wheel.html#a37de93673963de8d24843e471f516f76">Init</a> (double diameter, double ppr, double loopTime, double max_power, double max_acceleration, double pid_params[])</td></tr>
-<tr class="separator:a37de93673963de8d24843e471f516f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73a90efc6a029647cd272f1408cbe235" id="r_a73a90efc6a029647cd272f1408cbe235"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wheel.html#a73a90efc6a029647cd272f1408cbe235">Init</a> (double diameter, double ppr, double dt, double max_power, double pid_params[])</td></tr>
+<tr class="separator:a73a90efc6a029647cd272f1408cbe235"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af621f7ddeb09129b27974ed86a9df084" id="r_af621f7ddeb09129b27974ed86a9df084"><td class="memItemLeft" align="right" valign="top"><a id="af621f7ddeb09129b27974ed86a9df084" name="af621f7ddeb09129b27974ed86a9df084"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> ()</td></tr>
 <tr class="separator:af621f7ddeb09129b27974ed86a9df084"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,12 +127,15 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>_diameter</b></td><
 <tr class="memitem:a2526aad470d5f1b2bafc9f573ab7dee5" id="r_a2526aad470d5f1b2bafc9f573ab7dee5"><td class="memItemLeft" align="right" valign="top"><a id="a2526aad470d5f1b2bafc9f573ab7dee5" name="a2526aad470d5f1b2bafc9f573ab7dee5"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>_ppr_inv</b></td></tr>
 <tr class="separator:a2526aad470d5f1b2bafc9f573ab7dee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf1e7b88a658e6ecc0fcb78a3d2d7727" id="r_adf1e7b88a658e6ecc0fcb78a3d2d7727"><td class="memItemLeft" align="right" valign="top"><a id="adf1e7b88a658e6ecc0fcb78a3d2d7727" name="adf1e7b88a658e6ecc0fcb78a3d2d7727"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>_loopTime</b></td></tr>
-<tr class="separator:adf1e7b88a658e6ecc0fcb78a3d2d7727"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7526d09363849aa85a837985ffea7ae" id="r_ad7526d09363849aa85a837985ffea7ae"><td class="memItemLeft" align="right" valign="top"><a id="ad7526d09363849aa85a837985ffea7ae" name="ad7526d09363849aa85a837985ffea7ae"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>_power_max</b></td></tr>
 <tr class="separator:ad7526d09363849aa85a837985ffea7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2929cad5c72f5c8f38c729d075be780" id="r_aa2929cad5c72f5c8f38c729d075be780"><td class="memItemLeft" align="right" valign="top"><a id="aa2929cad5c72f5c8f38c729d075be780" name="aa2929cad5c72f5c8f38c729d075be780"></a>
+unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>_dt</b></td></tr>
+<tr class="separator:aa2929cad5c72f5c8f38c729d075be780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36e163f89ec59ff0a0596bf1f849d626" id="r_a36e163f89ec59ff0a0596bf1f849d626"><td class="memItemLeft" align="right" valign="top"><a id="a36e163f89ec59ff0a0596bf1f849d626" name="a36e163f89ec59ff0a0596bf1f849d626"></a>
+unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>_dt_real</b></td></tr>
+<tr class="separator:a36e163f89ec59ff0a0596bf1f849d626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dd7a796820cc1bc4fe63a0557e95c53" id="r_a2dd7a796820cc1bc4fe63a0557e95c53"><td class="memItemLeft" align="right" valign="top"><a id="a2dd7a796820cc1bc4fe63a0557e95c53" name="a2dd7a796820cc1bc4fe63a0557e95c53"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>_velocity_now</b></td></tr>
 <tr class="separator:a2dd7a796820cc1bc4fe63a0557e95c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,6 +157,12 @@ unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>_time_last</
 <tr class="memitem:ad99e3f32cd732cb74cf5752b6b9f35f1" id="r_ad99e3f32cd732cb74cf5752b6b9f35f1"><td class="memItemLeft" align="right" valign="top"><a id="ad99e3f32cd732cb74cf5752b6b9f35f1" name="ad99e3f32cd732cb74cf5752b6b9f35f1"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>_velocity_last</b></td></tr>
 <tr class="separator:ad99e3f32cd732cb74cf5752b6b9f35f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3a717295ee7f135cb9e99b08b375dce" id="r_ab3a717295ee7f135cb9e99b08b375dce"><td class="memItemLeft" align="right" valign="top"><a id="ab3a717295ee7f135cb9e99b08b375dce" name="ab3a717295ee7f135cb9e99b08b375dce"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>_output_last</b></td></tr>
+<tr class="separator:ab3a717295ee7f135cb9e99b08b375dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa17540afad32b87fb050887f3b4bc0fd" id="r_aa17540afad32b87fb050887f3b4bc0fd"><td class="memItemLeft" align="right" valign="top"><a id="aa17540afad32b87fb050887f3b4bc0fd" name="aa17540afad32b87fb050887f3b4bc0fd"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>_dt_inv</b></td></tr>
+<tr class="separator:aa17540afad32b87fb050887f3b4bc0fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab7ecfb7ffb40f405d45e8bd701311141" name="ab7ecfb7ffb40f405d45e8bd701311141"></a>
@@ -306,8 +315,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a37de93673963de8d24843e471f516f76" name="a37de93673963de8d24843e471f516f76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37de93673963de8d24843e471f516f76">&#9670;&#160;</a></span>Init()</h2>
+<a id="a73a90efc6a029647cd272f1408cbe235" name="a73a90efc6a029647cd272f1408cbe235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73a90efc6a029647cd272f1408cbe235">&#9670;&#160;</a></span>Init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -328,19 +337,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>loopTime</em>, </td>
+          <td class="paramname"><em>dt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>max_power</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>max_acceleration</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -369,10 +372,10 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_wheel_a37de93673963de8d24843e471f516f76_icgraph.png" border="0" usemap="#aclass_wheel_a37de93673963de8d24843e471f516f76_icgraph" alt=""/></div>
-<map name="aclass_wheel_a37de93673963de8d24843e471f516f76_icgraph" id="aclass_wheel_a37de93673963de8d24843e471f516f76_icgraph">
+<div class="center"><img src="class_wheel_a73a90efc6a029647cd272f1408cbe235_icgraph.png" border="0" usemap="#aclass_wheel_a73a90efc6a029647cd272f1408cbe235_icgraph" alt=""/></div>
+<map name="aclass_wheel_a73a90efc6a029647cd272f1408cbe235_icgraph" id="aclass_wheel_a73a90efc6a029647cd272f1408cbe235_icgraph">
 <area shape="rect" title=" " alt="" coords="188,5,271,32"/>
-<area shape="rect" href="class_differential_drive.html#a3249661138416fb98bd3327e0e79a72a" title="Initialize." alt="" coords="5,5,140,32"/>
+<area shape="rect" href="class_differential_drive.html#a3180d36913b354f22d1aa32f11ee0434" title="Initialize." alt="" coords="5,5,140,32"/>
 <area shape="poly" title=" " alt="" coords="172,21,140,21,140,16,172,16"/>
 </map>
 </div>
