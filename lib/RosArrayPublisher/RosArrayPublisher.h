@@ -10,7 +10,7 @@
 #include <std_msgs/Int32MultiArray.h>
 
 /// @brief 
-/// @tparam Publishする配列の型 
+/// @param Publishする配列の型 
 template<typename T>
 class RosArrayPublisher
 {

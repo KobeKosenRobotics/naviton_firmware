@@ -7,7 +7,7 @@
 #define WHEEL_H
 
 #ifndef VELOCITY_TO_POWER_COEF
-#define VELOCITY_TO_POWER_COEF 0.1008           
+#define VELOCITY_TO_POWER_COEF 1.0
 #endif
 
 #include <Encoder.h>
@@ -25,8 +25,10 @@ class Wheel
 
         double _diameter;
         double _ppr_inv;
-        double _loopTime;
         double _power_max;
+
+        unsigned long _dt;
+        unsigned long _dt_real;
 
         double _velocity_now;       // [m/s]
         double _velocity_target;    // [m/s]
@@ -35,13 +37,16 @@ class Wheel
         double _power;
 
         double _pulse_last;
-        unsigned long _time_last;   // [ms]
+        unsigned long _time_last;   // [micros]
         double _velocity_last;
+        double _output_last;
+
+        double _dt_inv;
     public:
         Wheel();
         Wheel(int pin_alpha, int pin_beta, int pin_pwm, int pin_dir);
 
-        void Init(double diameter, double ppr, double loopTime, double max_power, double max_acceleration, double pid_params[]);
+        void Init(double diameter, double ppr, double dt, double max_power, double pid_params[]);
         void Update();
         void Drive(double velocity);
         void Stop();

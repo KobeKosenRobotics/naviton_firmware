@@ -24,15 +24,20 @@ Wheel::Wheel(int pin_alpha, int pin_beta, int pin_pwm, int pin_dir) :
 /// @param max_power
 /// @param max_acceleration
 /// @param pid_params
-void Wheel::Init(double diameter, double ppr, double loopTime, double max_power, double max_acceleration, double pid_params[])
+void Wheel::Init(double diameter, double ppr, double dt, double max_power, double pid_params[])
 {
     _diameter = diameter;
     _ppr_inv = 1.0 / ppr;
-    _loopTime = loopTime;
     _power_max = max_power;
 
-    _pid.Init(pid_params[0], pid_params[1], pid_params[2], pid_params[3], pid_params[4], loopTime);
-    _pid.SetSaturation(-max_acceleration, max_acceleration);
+    _dt = dt * 1e6;
+    _dt_real = 0;
+
+    _time_last = micros();
+
+    _dt_inv = 1.0 / dt;
+
+    _pid.Init(pid_params[0], pid_params[1], pid_params[2], pid_params[3], pid_params[4], dt);
     Stop();
 }
 
@@ -40,32 +45,28 @@ void Wheel::Init(double diameter, double ppr, double loopTime, double max_power,
 void Wheel::Update()
 {
     unsigned long time_now = micros();
-    double dt = (time_now - _time_last) * 1e-6; // [mis]
-    if(dt < _loopTime) return;
+    _dt_real += (time_now - _time_last);
+    _time_last = time_now;
+    if(_dt_real < _dt) return;
+    _dt_real -= _dt;
+
     long long pulse_now = _encoder.read();
 
-    _velocity_now = (pulse_now - _pulse_last) * M_PI * _ppr_inv * _diameter / dt;
-    _acceleration = (_velocity_now - _velocity_last) / dt;
+    _velocity_now = (pulse_now - _pulse_last) * M_PI * _ppr_inv * _diameter * _dt_inv;
+    _acceleration = (_velocity_now - _velocity_last) * _dt_inv;
 
     double velocity_diff = _velocity_target - _velocity_now;
     _pid.Update(velocity_diff);
+    double output_now = _pid.GetOutput();
+    _power += (output_now - _output_last);
 
-    _power += _pid.GetOutput() * dt;
-
-    if(_power * _velocity_target < 0)
-    {
-        _power = 0;
-        _pid.ResetI();
-    }
-
-    float power_max = min(_power_max, abs(_velocity_target) / _diameter * VELOCITY_TO_POWER_COEF + 0.1);
-    
+    double power_max = min(_power_max, abs(_velocity_target) * VELOCITY_TO_POWER_COEF);
     _power = constrain(_power, -power_max, power_max);
     _motor.Drive(_power);
 
-    _time_last = time_now;
     _pulse_last = pulse_now;
     _velocity_last = _velocity_now;
+    _output_last = output_now;
 }
 
 /// @brief 
@@ -78,7 +79,6 @@ void Wheel::Drive(double velocity)
 /// @brief 
 void Wheel::Stop()
 {
-    _pid.ResetI();
     _motor.Stop();
     _power = 0;
     _velocity_target = 0;

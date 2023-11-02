@@ -6,7 +6,10 @@
     },
     "cmake.configureOnOpen": true,
     "cSpell.words": [
+        "Adafruit",
         "COEF",
-        "NAVITON"
+        "Cytron",
+        "NAVITON",
+        "rosserial"
     ]
 }
