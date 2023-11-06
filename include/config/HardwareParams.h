@@ -11,7 +11,8 @@
 #define BNO_ADDRESS             0x28
 
 #define EMERGENCY_STOP_PIN      26
-#define AUTO_MANUAL_SWITCH_PIN  25
+#define AUTO_SWITCH_PIN         9
+#define MANUAL_SWITCH_PIN       10
 
 // ENCODER_ALPHA, ENCODER_BETA, MD_PWM, MD_DIR
 #define LEFT_WHEEL_PINS    15,16,22,23

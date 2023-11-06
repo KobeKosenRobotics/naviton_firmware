@@ -12,7 +12,7 @@ void NavitonROS::Init(ros::NodeHandle& nh)
     Naviton::Init();
     _state_pub.Init(nh);
 
-    pinMode(AUTO_MANUAL_SWITCH_PIN, INPUT_PULLUP);
+    pinMode(AUTO_SWITCH_PIN, INPUT_PULLUP);
 
     nh.subscribe(_cmd_vel_sub);
 }
@@ -33,10 +33,11 @@ void NavitonROS::UpdateInput()
 {
     if(digitalRead(EMERGENCY_STOP_PIN))
     {
-        if(digitalRead(AUTO_MANUAL_SWITCH_PIN))
+        if(!digitalRead(AUTO_SWITCH_PIN))
         {
             // Auto
             _drive.Drive(_cmd_vel.linear.x, _cmd_vel.angular.z);
+            Serial.println("jirituidou");
         }
         else
         {
@@ -47,6 +48,7 @@ void NavitonROS::UpdateInput()
     else
     {
         _drive.Stop();
+        Serial.println("NavitonROS_stop");
     }
 }
 

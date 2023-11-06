@@ -17,6 +17,7 @@ void Naviton::Init()
     digitalWrite(LED_BUILTIN, HIGH);
 
     pinMode(EMERGENCY_STOP_PIN, INPUT);
+    pinMode(MANUAL_SWITCH_PIN, INPUT_PULLUP);
 
     Serial.begin(SERIAL_BAUDRATE);
     Wire.setSCL(I2C_SCL);
@@ -56,7 +57,7 @@ void Naviton::UpdateInput()
 
     if(!_ps3_used->IsConnected()) _ps3_used = nullptr;
 
-    if(digitalRead(EMERGENCY_STOP_PIN) && _ps3_used != nullptr)
+    if(digitalRead(EMERGENCY_STOP_PIN) && !digitalRead(MANUAL_SWITCH_PIN) && _ps3_used != nullptr)
     {
         double linear_vel = 0.0;
         double angular_vel = 0.0;
