@@ -27,8 +27,6 @@ class NavitonROS : Naviton
         void UpdateInput();
 
         void cmd_vel_cb(const geometry_msgs::Twist& twist);
-
-        bool use_cmd_vel;
 };
 
 #endif
