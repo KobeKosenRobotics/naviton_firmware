@@ -37,7 +37,6 @@ void NavitonROS::UpdateInput()
         {
             // Auto
             _drive.Drive(_cmd_vel.linear.x, _cmd_vel.angular.z);
-            Serial.println("jirituidou");
         }
         else
         {
@@ -48,7 +47,6 @@ void NavitonROS::UpdateInput()
     else
     {
         _drive.Stop();
-        Serial.println("NavitonROS_stop");
     }
 }
 
