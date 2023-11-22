@@ -8,11 +8,10 @@ class Pump
 {
     private:
         CytronMD _md;
-        int _dir;
         double _power = 1.0;
     public:
         Pump();
-        Pump(int pin_pwm, int pin_dir, bool direction);
+        Pump(int pin_pwm, int pin_dir);
         void On();
         void Off();
         void Drive(bool state);

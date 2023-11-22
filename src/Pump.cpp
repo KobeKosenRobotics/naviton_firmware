@@ -5,13 +5,13 @@ Pump::Pump()
 
 }
 
-Pump::Pump(int pin_pwm, int pin_dir, bool direction) : _md(pin_pwm, pin_dir), _dir(direction ? -1 : 1)
+Pump::Pump(int pin_pwm, int pin_dir) : _md(pin_pwm, pin_dir)
 {
 }
 
 void Pump::On()
 {
-    _md.Drive(_power * _dir);
+    _md.Drive(_power);
 }
 
 void Pump::Off()

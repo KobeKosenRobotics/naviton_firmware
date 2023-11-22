@@ -14,11 +14,11 @@
 #endif
 
 #ifndef PUMP_PWM_PIN
-#define PUMP_PWM_PIN 1
+#define PUMP_PWM_PIN 10
 #endif
 
 #ifndef PUMP_DIR_PIN
-#define PUMP_DIR_PIN 1
+#define PUMP_DIR_PIN 9
 #endif
 
 class UvgROS

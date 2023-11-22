@@ -1,6 +1,6 @@
 #include "UvgROS.h"
 
-UvgROS::UvgROS() : _pump(PUMP_PWM_PIN, PUMP_DIR_PIN, false), _pump_cmd_sub(PUMP_CMD_TOPIC, &UvgROS::pump_cmd_cb, this)
+UvgROS::UvgROS() : _pump(PUMP_PWM_PIN, PUMP_DIR_PIN), _pump_cmd_sub(PUMP_CMD_TOPIC, &UvgROS::pump_cmd_cb, this)
 {
 
 }
