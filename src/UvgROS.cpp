@@ -8,6 +8,7 @@ UvgROS::UvgROS() : _pump(PUMP_PWM_PIN, PUMP_DIR_PIN), _pump_cmd_sub(PUMP_CMD_TOP
 void UvgROS::Init(ros::NodeHandle& nh)
 {
     nh.subscribe(_pump_cmd_sub);
+    _pump.SetPower(0.5);
 }
 
 void UvgROS::Update()
