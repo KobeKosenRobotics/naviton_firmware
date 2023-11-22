@@ -10,7 +10,7 @@
 #include "Pump.h"
 
 #ifndef PUMP_CMD_TOPIC
-#define PUMP_CMD_TOPIC "/naviton/uvg_controller/pump_cmd"
+#define PUMP_CMD_TOPIC "/naviton_manipulator/uvg_controller/pump_cmd"
 #endif
 
 #ifndef PUMP_PWM_PIN
