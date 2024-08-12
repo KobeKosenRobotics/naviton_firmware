@@ -3,7 +3,9 @@
 NavitonROS::NavitonROS() :
     Naviton(),
     _state_pub(STATE_TOPIC),
-    _cmd_vel_sub(CMD_VEL_TOPIC, &NavitonROS::cmd_vel_cb, this)
+    _cmd_vel_sub(CMD_VEL_TOPIC, &NavitonROS::cmd_vel_cb, this),
+    _remote_vel_sub(REMOTE_VEL_TOPIC, &NavitonROS::remote_vel_cb, this),
+    _remote_cmd_sub(REMOTE_CMD_TOPIC, &NavitonROS::remote_cmd_cb, this)
 {
 }
 
@@ -35,8 +37,16 @@ void NavitonROS::UpdateInput()
     {
         if(!digitalRead(AUTO_SWITCH_PIN))
         {
-            // Auto
-            _drive.Drive(_cmd_vel.linear.x, _cmd_vel.angular.z);
+            if(_remote_cmd.data)
+            {
+                // Remote
+                _drive.Drive(_remote_vel.linear.x, _remote_vel.angular.z);
+            }
+            else
+            {
+                // Auto
+                _drive.Drive(_cmd_vel.linear.x, _cmd_vel.angular.z);
+            }
         }
         else
         {
@@ -53,4 +63,14 @@ void NavitonROS::UpdateInput()
 void NavitonROS::cmd_vel_cb(const geometry_msgs::Twist& cmd_vel)
 {
     _cmd_vel = cmd_vel;
+}
+
+void NavitonROS::remote_vel_cb(const geometry_msgs::Twist& remote_vel)
+{
+    _remote_vel = remote_vel;
+}
+
+void NavitonROS::remote_cmd_cb(const std_msgs::Bool& remote_cmd)
+{
+    _remote_cmd = remote_cmd;
 }
