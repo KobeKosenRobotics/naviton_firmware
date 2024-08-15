@@ -16,6 +16,8 @@ void NavitonROS::Init(ros::NodeHandle& nh)
 
     pinMode(AUTO_SWITCH_PIN, INPUT_PULLUP);
 
+    _remote_cmd.data = 0;
+
     nh.subscribe(_cmd_vel_sub);
 }
 
