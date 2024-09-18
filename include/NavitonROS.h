@@ -8,6 +8,7 @@
 
 #include <geometry_msgs/Twist.h>
 #include <ros.h>
+#include <std_msgs/Int32.h>
 #include <std_msgs/Bool.h>
 
 #include "config/RosParams.h"
@@ -20,10 +21,10 @@ private:
   NavitonStatePublisher _state_pub;
   ros::Subscriber<geometry_msgs::Twist, NavitonROS> _cmd_vel_sub;
   ros::Subscriber<geometry_msgs::Twist, NavitonROS> _remote_vel_sub;
-  ros::Subscriber<std_msgs::Bool, NavitonROS> _remote_cmd_sub;
+  ros::Subscriber<std_msgs::Int32, NavitonROS> _remote_mode_sub;
   geometry_msgs::Twist _cmd_vel;
   geometry_msgs::Twist _remote_vel;
-  std_msgs::Bool _remote_cmd;
+  std_msgs::Int32 _remote_mode;
 
 public:
   NavitonROS();
@@ -33,7 +34,7 @@ public:
 
   void cmd_vel_cb(const geometry_msgs::Twist &twist);
   void remote_vel_cb(const geometry_msgs::Twist &twist);
-  void remote_cmd_cb(const std_msgs::Bool &remote_cmd);
+  void remote_mode_cb(const std_msgs::Int32 &remote_mode);
 };
 
 #endif

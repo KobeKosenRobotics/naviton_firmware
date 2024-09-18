@@ -5,7 +5,7 @@ NavitonROS::NavitonROS() :
     _state_pub(STATE_TOPIC),
     _cmd_vel_sub(CMD_VEL_TOPIC, &NavitonROS::cmd_vel_cb, this),
     _remote_vel_sub(REMOTE_VEL_TOPIC, &NavitonROS::remote_vel_cb, this),
-    _remote_cmd_sub(REMOTE_CMD_TOPIC, &NavitonROS::remote_cmd_cb, this)
+    _remote_mode_sub(REMOTE_MODE_TOPIC, &NavitonROS::remote_mode_cb, this)
 {
 }
 
@@ -16,7 +16,7 @@ void NavitonROS::Init(ros::NodeHandle& nh)
 
     pinMode(AUTO_SWITCH_PIN, INPUT_PULLUP);
 
-    _remote_cmd.data = 0;
+    _remote_mode.data = 0;
 
     nh.subscribe(_cmd_vel_sub);
 }
@@ -39,7 +39,7 @@ void NavitonROS::UpdateInput()
     {
         if(!digitalRead(AUTO_SWITCH_PIN))
         {
-            if(_remote_cmd.data)
+            if(_remote_mode.data)
             {
                 // Remote
                 _drive.Drive(_remote_vel.linear.x, _remote_vel.angular.z);
@@ -72,7 +72,7 @@ void NavitonROS::remote_vel_cb(const geometry_msgs::Twist& remote_vel)
     _remote_vel = remote_vel;
 }
 
-void NavitonROS::remote_cmd_cb(const std_msgs::Bool& remote_cmd)
+void NavitonROS::remote_mode_cb(const std_msgs::Int32& remote_mode)
 {
-    _remote_cmd = remote_cmd;
+    _remote_mode = remote_mode;
 }
