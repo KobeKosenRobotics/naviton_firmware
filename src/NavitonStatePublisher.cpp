@@ -1,11 +1,11 @@
 #include "NavitonStatePublisher.h"
 
-NavitonStatePublisher::NavitonStatePublisher() : 
+NavitonStatePublisher::NavitonStatePublisher() :
     _publisher()
 {
 }
 
-NavitonStatePublisher::NavitonStatePublisher(const char *topic_name) : 
+NavitonStatePublisher::NavitonStatePublisher(const char *topic_name) :
     _publisher(topic_name, 9)
 {
 }

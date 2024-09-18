@@ -11,7 +11,7 @@ class NavitonStatePublisher
     public:
         NavitonStatePublisher();
         NavitonStatePublisher(const char *topic_name);
-        
+
         void Init(ros::NodeHandle& nh);
         void Publish();
 

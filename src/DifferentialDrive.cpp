@@ -7,18 +7,18 @@ DifferentialDrive::DifferentialDrive()
 }
 
 /// @brief Constructor
-/// @param pin_l 
-/// @param pin_r 
-DifferentialDrive::DifferentialDrive(int pin_l[], int pin_r[]) : 
+/// @param pin_l
+/// @param pin_r
+DifferentialDrive::DifferentialDrive(int pin_l[], int pin_r[]) :
     _wheel_l(pin_l[0], pin_l[1], pin_l[2], pin_l[3]),
     _wheel_r(pin_r[0], pin_r[1], pin_r[2], pin_r[3])
 {
 }
 
 /// @brief Initialize
-/// @param footprint_width 
-/// @param wheel_radius 
-/// @param ppr 
+/// @param footprint_width
+/// @param wheel_radius
+/// @param ppr
 void DifferentialDrive::Init(double footprint_width, double wheel_radius, double ppr, double dt, double max_power, double pid_params[])
 {
     _footprint_width_2 = footprint_width * 0.5;
@@ -51,21 +51,21 @@ void DifferentialDrive::Drive(double linear_velocity, double angular_velocity)
     _wheel_r.Drive(linear_velocity + angular_velocity);
 }
 
-/// @brief 
+/// @brief
 void DifferentialDrive::Stop()
 {
     _wheel_l.Stop();
     _wheel_r.Stop();
 }
 
-/// @brief 
+/// @brief
 /// @return _linear_velocity [m/s]
 double DifferentialDrive::GetLinearVelocity()
 {
     return _linear_velocity;
 }
 
-/// @brief 
+/// @brief
 /// @return _angular_velocity [rad/s]
 double DifferentialDrive::GetAngularVelocity()
 {

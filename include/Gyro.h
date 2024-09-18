@@ -11,27 +11,27 @@
 #define RAD2DEG 57.2958
 #endif
 
-class Gyro
-{
-    private:
-        Adafruit_BNO055 _bno;
+class Gyro {
+private:
+  Adafruit_BNO055 _bno;
 
-        double _w, _x, _y, _z;
-        double _roll, _pitch, _yaw; // [rad]
+  double _w, _x, _y, _z;
+  double _roll, _pitch, _yaw; // [rad]
 
-        void CalcRPY(double q0, double q1, double q2, double q3);
-    public:
-        Gyro();
-        Gyro(const int id, const int address);
-        bool Init();
-        void Update();
-        double GetRoll();   // [rad]
-        double GetPitch();  // [rad]
-        double GetYaw();    // [rad]
-        double GetW();
-        double GetX();
-        double GetY();
-        double GetZ();
+  void CalcRPY(double q0, double q1, double q2, double q3);
+
+public:
+  Gyro();
+  Gyro(const int id, const int address);
+  bool Init();
+  void Update();
+  double GetRoll();  // [rad]
+  double GetPitch(); // [rad]
+  double GetYaw();   // [rad]
+  double GetW();
+  double GetX();
+  double GetY();
+  double GetZ();
 };
 
 #endif

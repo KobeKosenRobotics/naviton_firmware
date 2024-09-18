@@ -1,21 +1,21 @@
 #include "Gyro.h"
 
-/// @brief 
+/// @brief
 Gyro::Gyro()
 {
 
 }
 
-/// @brief 
-/// @param id 
-/// @param address 
+/// @brief
+/// @param id
+/// @param address
 Gyro::Gyro(const int id, const int address) : _bno(id, address)
 {
 
 }
 
-/// @brief 
-/// @return 
+/// @brief
+/// @return
 bool Gyro::Init()
 {
     if(!_bno.begin()) return false;
@@ -23,7 +23,7 @@ bool Gyro::Init()
     return true;
 }
 
-/// @brief 
+/// @brief
 void Gyro::Update()
 {
     imu::Quaternion quat = _bno.getQuat();
@@ -34,11 +34,11 @@ void Gyro::Update()
     CalcRPY(_w, _x, _y, _z);
 }
 
-/// @brief 
-/// @param q0 
-/// @param q1 
-/// @param q2 
-/// @param q3 
+/// @brief
+/// @param q0
+/// @param q1
+/// @param q2
+/// @param q3
 void Gyro::CalcRPY(double q0, double q1, double q2, double q3)
 {
     double q0q0 = q0 * q0;
@@ -56,21 +56,21 @@ void Gyro::CalcRPY(double q0, double q1, double q2, double q3)
     _yaw = atan2(2.0 * (q1q2 + q0q3), q0q0 + q1q1 - q2q2 - q3q3);
 }
 
-/// @brief 
+/// @brief
 /// @return [rad]
 double Gyro::GetRoll()
 {
     return _roll;
 }
 
-/// @brief 
+/// @brief
 /// @return [rad]
 double Gyro::GetPitch()
 {
     return _pitch;
 }
 
-/// @brief 
+/// @brief
 /// @return [rad]
 double Gyro::GetYaw()
 {

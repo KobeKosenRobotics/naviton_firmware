@@ -5,7 +5,7 @@ PID::PID()
 
 }
 
-PID::PID(double k_p, double k_i, double k_d, double k_b, double n, double dt) 
+PID::PID(double k_p, double k_i, double k_d, double k_b, double n, double dt)
 {
     SetGains(k_p, k_i, k_d, k_b, n, dt);
 }
@@ -62,7 +62,7 @@ void PID::SetGains(double k_p, double k_i, double k_d, double k_b, double n, dou
 
     _i = 0;
     _d = 0;
-    
+
     _dt = dt * 1e6;
     _dt_real = 0;
 
