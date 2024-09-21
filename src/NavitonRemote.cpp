@@ -12,7 +12,12 @@ void NavitonRemote::Init(ros::NodeHandle& nh)
 {
     NavitonROS::Init(nh);
 
+    _remote_emg.data = true;
     _remote_mode.data = 0;
+
+    nh.subscribe(_remote_vel_sub);
+    nh.subscribe(_remote_emg_sub);
+    nh.subscribe(_remote_mode_sub);
 }
 
 void NavitonRemote::Update()
@@ -22,30 +27,44 @@ void NavitonRemote::Update()
 
 void NavitonRemote::UpdateInput()
 {
-    if(digitalRead(MANUAL_SWITCH_PIN))
+    if(digitalRead(EMERGENCY_STOP_PIN))
     {
-        if(_remote_emg.data)
+        if(!digitalRead(AUTO_SWITCH_PIN))
         {
-            if(_remote_mode.data == 1)
+            if(_remote_emg.data)
             {
-                // Remote
-                _drive.Drive(_remote_vel.linear.x, _remote_vel.angular.z);
+                if(_remote_mode.data == 1)
+                {
+                    // Remote
+                    double linear_vel = 0.0;
+                    double angular_vel = 0.0;
+                    double linear_vel_rate = (double)_remote_vel.linear.x;
+                    double angular_vel_rate = (double)_remote_vel.angular.z;
+
+                    linear_vel = abs(linear_vel_rate) >= JOY_DEAD_ZONE_PERCENTAGE ? linear_vel_rate * MAX_LINEAR_VELOCITY : 0.0;
+                    angular_vel = abs(angular_vel_rate) >= JOY_DEAD_ZONE_PERCENTAGE ? angular_vel_rate * MAX_ANGULAR_VELOCITY : 0.0;
+
+                    _drive.Drive(linear_vel, angular_vel);
+                }
+                else
+                {
+                    // Auto
+                    NavitonROS::UpdateInput();
+                }
             }
             else
             {
-                // Auto
-                NavitonROS::UpdateInput();
+                _drive.Stop();
             }
         }
         else
         {
-            _drive.Stop();
+            // Manual
+            Naviton::UpdateInput();
         }
     }
-    else
-    {
-        // Manual
-        Naviton::UpdateInput();
+    else{
+    _drive.Stop();
     }
 }
 

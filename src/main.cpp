@@ -6,7 +6,7 @@
 
 ros::NodeHandle nh;
 
-NavitonROS nvt;
+NavitonRemote nvt;
 UvgROS uvg;
 
 void setup()
