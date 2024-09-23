@@ -8,30 +8,30 @@
 
 #include "Wheel.h"
 
-class DifferentialDrive
-{
-    private:
-        Wheel _wheel_l;
-        Wheel _wheel_r;
+class DifferentialDrive {
+private:
+  Wheel _wheel_l;
+  Wheel _wheel_r;
 
-        double _linear_velocity, _angular_velocity;
+  double _linear_velocity, _angular_velocity;
 
-        double _footprint_width_2;     
-        double _footprint_width_inv;                                                      // [m]
-    public:
-        DifferentialDrive();
-        DifferentialDrive(int pin_l[], int pin_r[]);
-        
-        void Init(double footprint_width, double wheel_radius, double ppr, double dt, double max_power, double pid_params[]);    // [m], [m], [], []
-        void Update();
-        void Drive(double linear_velocity, double angular_velocity);                                // [m/s], [rad/s]
-        void Stop();
+  double _footprint_width_2;
+  double _footprint_width_inv; // [m]
+public:
+  DifferentialDrive();
+  DifferentialDrive(int pin_l[], int pin_r[]);
 
-        double GetLinearVelocity();
-        double GetAngularVelocity();
+  void Init(double footprint_width, double wheel_radius, double ppr, double dt,
+            double max_power, double pid_params[]); // [m], [m], [], []
+  void Update();
+  void Drive(double linear_velocity, double angular_velocity); // [m/s], [rad/s]
+  void Stop();
 
-        double GetLeftWheelVelocity();
-        double GetRightWheelVelocity();
+  double GetLinearVelocity();
+  double GetAngularVelocity();
+
+  double GetLeftWheelVelocity();
+  double GetRightWheelVelocity();
 };
 
 #endif

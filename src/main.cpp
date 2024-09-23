@@ -1,12 +1,12 @@
 #include <Arduino.h>
 #include <ros.h>
 
-#include "NavitonROS.h"
+#include "NavitonRemote.h"
 #include "UvgROS.h"
 
 ros::NodeHandle nh;
 
-NavitonROS nvt;
+NavitonRemote nvt;
 UvgROS uvg;
 
 void setup()

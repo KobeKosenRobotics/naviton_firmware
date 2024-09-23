@@ -2,7 +2,9 @@
     "files.associations": {
         "string": "cpp",
         "initializer_list": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "array": "cpp",
+        "string_view": "cpp"
     },
     "cmake.configureOnOpen": true,
     "cSpell.words": [

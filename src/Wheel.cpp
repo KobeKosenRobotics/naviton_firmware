@@ -1,25 +1,25 @@
 #include "Wheel.h"
 
-/// @brief 
+/// @brief
 Wheel::Wheel() : _encoder(0, 0)
 {
 
 }
 
-/// @brief 
-/// @param pin_alpha 
-/// @param pin_beta 
-/// @param pin_pwm 
-/// @param pin_dir 
-Wheel::Wheel(int pin_alpha, int pin_beta, int pin_pwm, int pin_dir) : 
+/// @brief
+/// @param pin_alpha
+/// @param pin_beta
+/// @param pin_pwm
+/// @param pin_dir
+Wheel::Wheel(int pin_alpha, int pin_beta, int pin_pwm, int pin_dir) :
     _encoder(pin_alpha, pin_beta),
     _motor(pin_pwm, pin_dir)
 {
 }
 
-/// @brief 
-/// @param radius 
-/// @param ppr 
+/// @brief
+/// @param radius
+/// @param ppr
 /// @param loopTime
 /// @param max_power
 /// @param max_acceleration
@@ -41,7 +41,7 @@ void Wheel::Init(double diameter, double ppr, double dt, double max_power, doubl
     Stop();
 }
 
-/// @brief 
+/// @brief
 void Wheel::Update()
 {
     unsigned long time_now = micros();
@@ -69,14 +69,14 @@ void Wheel::Update()
     _output_last = output_now;
 }
 
-/// @brief 
+/// @brief
 /// @param velocity [m/s]
 void Wheel::Drive(double velocity)
 {
     _velocity_target = velocity;
 }
 
-/// @brief 
+/// @brief
 void Wheel::Stop()
 {
     _motor.Stop();
@@ -84,22 +84,22 @@ void Wheel::Stop()
     _velocity_target = 0;
 }
 
-/// @brief 
+/// @brief
 /// @return [m/s]
 double Wheel::GetVelocity()
 {
     return _velocity_now;
 }
 
-/// @brief 
+/// @brief
 /// @return [m/s^2]
 double Wheel::GetAcceleration()
 {
     return _acceleration;
 }
 
-/// @brief 
-/// @return 
+/// @brief
+/// @return
 double Wheel::GetOutput()
 {
     return _power;
