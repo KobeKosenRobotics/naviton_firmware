@@ -17,6 +17,8 @@ private:
 
   double _footprint_width_2;
   double _footprint_width_inv; // [m]
+
+  unsigned long _time_last;
 public:
   DifferentialDrive();
   DifferentialDrive(int pin_l[], int pin_r[]);
@@ -26,6 +28,8 @@ public:
   void Update();
   void Drive(double linear_velocity, double angular_velocity); // [m/s], [rad/s]
   void Stop();
+  void Accelerate(double linear_velocity, double angular_velocity, double max_linear_accelerate, double max_angular_accelerate);
+  void DecelerateStop();
 
   double GetLinearVelocity();
   double GetAngularVelocity();

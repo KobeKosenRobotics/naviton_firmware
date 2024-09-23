@@ -23,6 +23,7 @@ void DifferentialDrive::Init(double footprint_width, double wheel_radius, double
 {
     _footprint_width_2 = footprint_width * 0.5;
     _footprint_width_inv = 1.0 / footprint_width;
+    _time_last = micros();
     _wheel_l.Init(wheel_radius, ppr, dt, max_power, pid_params);
     _wheel_r.Init(wheel_radius, ppr, dt, max_power, pid_params);
     Stop();
@@ -56,6 +57,26 @@ void DifferentialDrive::Stop()
 {
     _wheel_l.Stop();
     _wheel_r.Stop();
+}
+
+void DifferentialDrive::Accelerate(double linear_velocity, double angular_velocity, double max_linear_accelerate, double max_angular_accelerate)
+{
+    unsigned long time_now = micros();
+    double _dt = (time_now - _time_last);
+    _time_last = time_now;
+
+    _linear_velocity += constrain((linear_velocity - _linear_velocity)*1e6/_dt, -max_linear_accelerate, max_linear_accelerate) * _dt / 1e6;
+    _angular_velocity += constrain((angular_velocity - _angular_velocity)*1e6/_dt, -max_angular_accelerate, max_angular_accelerate) * _dt / 1e6;
+
+    _linear_velocity = constrain(_linear_velocity, -1.0, 1.0);
+    _angular_velocity = constrain(_angular_velocity, -1.0, 1.0);
+
+    Drive(_linear_velocity, _angular_velocity);
+}
+
+void DifferentialDrive::DecelerateStop()
+{
+    Accelerate(0, 0, 2.0, 1.0);
 }
 
 /// @brief
