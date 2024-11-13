@@ -46,7 +46,7 @@ void NavitonROS::UpdateInput()
     }
     else
     {
-        _drive.Stop();
+        _drive.DecelerateStop();
     }
 }
 

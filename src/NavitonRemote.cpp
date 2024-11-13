@@ -44,7 +44,7 @@ void NavitonRemote::UpdateInput()
                     linear_vel = abs(linear_vel_rate) >= JOY_DEAD_ZONE_PERCENTAGE ? linear_vel_rate * MAX_LINEAR_VELOCITY : 0.0;
                     angular_vel = abs(angular_vel_rate) >= JOY_DEAD_ZONE_PERCENTAGE ? angular_vel_rate * MAX_ANGULAR_VELOCITY : 0.0;
 
-                    _drive.Drive(linear_vel, angular_vel);
+                    _drive.Accelerate(linear_vel, angular_vel, 120.0, 800.0);
                 }
                 else
                 {
@@ -54,7 +54,7 @@ void NavitonRemote::UpdateInput()
             }
             else
             {
-                _drive.Stop();
+                _drive.DecelerateStop();
             }
         }
         else
@@ -64,7 +64,8 @@ void NavitonRemote::UpdateInput()
         }
     }
     else{
-    _drive.Stop();
+    _drive.DecelerateStop();
+
     }
 }
 

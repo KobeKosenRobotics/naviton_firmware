@@ -26,7 +26,7 @@ public:
   void Update();
   void UpdateInput();
 
-  void cmd_vel_cb(const geometry_msgs::Twist &twist);
+  void cmd_vel_cb(const geometry_msgs::Twist& twist);
 };
 
 #endif

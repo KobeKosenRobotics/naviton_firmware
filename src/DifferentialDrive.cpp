@@ -76,7 +76,7 @@ void DifferentialDrive::Accelerate(double linear_velocity, double angular_veloci
 
 void DifferentialDrive::DecelerateStop()
 {
-    Accelerate(0, 0, 2.0, 1.0);
+    Accelerate(0, 0, 120.0, 800.0);
 }
 
 /// @brief
