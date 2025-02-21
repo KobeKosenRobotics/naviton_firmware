@@ -27,44 +27,38 @@ void NavitonRemote::Update()
 
 void NavitonRemote::UpdateInput()
 {
-    if(digitalRead(EMERGENCY_STOP_PIN))
+    if(!digitalRead(AUTO_MUNUAL_SWITCH_PIN))
     {
-        if(!digitalRead(AUTO_SWITCH_PIN))
+        if(_remote_emg.data)
         {
-            if(_remote_emg.data)
+            if(_remote_mode.data == 1)
             {
-                if(_remote_mode.data == 1)
-                {
-                    // Remote
-                    double linear_vel = 0.0;
-                    double angular_vel = 0.0;
-                    double linear_vel_rate = (double)_remote_vel.linear.x;
-                    double angular_vel_rate = (double)_remote_vel.angular.z;
+                // Remote
+                double linear_vel = 0.0;
+                double angular_vel = 0.0;
+                double linear_vel_rate = (double)_remote_vel.linear.x;
+                double angular_vel_rate = (double)_remote_vel.angular.z;
 
-                    linear_vel = abs(linear_vel_rate) >= JOY_DEAD_ZONE_PERCENTAGE ? linear_vel_rate * MAX_LINEAR_VELOCITY : 0.0;
-                    angular_vel = abs(angular_vel_rate) >= JOY_DEAD_ZONE_PERCENTAGE ? angular_vel_rate * MAX_ANGULAR_VELOCITY : 0.0;
+                linear_vel = abs(linear_vel_rate) >= JOY_DEAD_ZONE_PERCENTAGE ? linear_vel_rate * MAX_LINEAR_VELOCITY : 0.0;
+                angular_vel = abs(angular_vel_rate) >= JOY_DEAD_ZONE_PERCENTAGE ? angular_vel_rate * MAX_ANGULAR_VELOCITY : 0.0;
 
-                    _drive.Drive(linear_vel, angular_vel);
-                }
-                else
-                {
-                    // Auto
-                    NavitonROS::UpdateInput();
-                }
+                _drive.Drive(linear_vel, angular_vel);
             }
             else
             {
-                _drive.Stop();
+                // Auto
+                NavitonROS::UpdateInput();
             }
         }
         else
         {
-            // Manual
-            Naviton::UpdateInput();
+            _drive.Stop();
         }
     }
-    else{
-    _drive.Stop();
+    else
+    {
+        // Manual
+        Naviton::UpdateInput();
     }
 }
 

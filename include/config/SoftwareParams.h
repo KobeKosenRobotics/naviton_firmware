@@ -1,7 +1,7 @@
 #ifndef SOFTWARE_PARAMS_H
 #define SOFTWARE_PARAMS_H
 
-#define SERIAL_BAUDRATE                     57600
+#define SERIAL_BAUDRATE                     115200
 
 #define WHEEL_LOOP_TIME                     0.05
 

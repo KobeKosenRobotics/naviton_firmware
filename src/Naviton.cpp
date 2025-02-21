@@ -17,7 +17,7 @@ void Naviton::Init()
     digitalWrite(LED_BUILTIN, HIGH);
 
     pinMode(EMERGENCY_STOP_PIN, INPUT);
-    pinMode(MANUAL_SWITCH_PIN, INPUT_PULLUP);
+    pinMode(AUTO_MUNUAL_SWITCH_PIN, INPUT_PULLUP);
 
     Serial.begin(SERIAL_BAUDRATE);
     Wire.setSCL(I2C_SCL);
@@ -47,7 +47,7 @@ void Naviton::Update()
 
     _odom.Update(_drive.GetLinearVelocity(), _gyro.GetYaw(), -_gyro.GetPitch());
 
-    digitalWrite(LED_BUILTIN, digitalRead(EMERGENCY_STOP_PIN));
+    
 }
 
 void Naviton::UpdateInput()
@@ -57,7 +57,8 @@ void Naviton::UpdateInput()
 
     if(!_ps3_used->IsConnected()) _ps3_used = nullptr;
 
-    if(digitalRead(EMERGENCY_STOP_PIN) && !digitalRead(MANUAL_SWITCH_PIN) && _ps3_used != nullptr)
+    // if digitalRead(AUTO_MUNUAL_SWITCH_PIN) && _ps3_used != nullptr)
+    if( digitalRead(AUTO_MUNUAL_SWITCH_PIN) && _ps3_used != nullptr)
     {
         double linear_vel = 0.0;
         double angular_vel = 0.0;
@@ -68,9 +69,15 @@ void Naviton::UpdateInput()
         angular_vel = abs(angular_vel_rate) >= JOY_DEAD_ZONE_PERCENTAGE ? angular_vel_rate * MAX_ANGULAR_VELOCITY : 0.0;
 
         _drive.Drive(linear_vel, angular_vel);
+
+        Serial.print("ahya");
+        Serial.print(_ps3_wireless.GetAxis(LX));
+        Serial.print(":");
+        Serial.println(_ps3_wireless.GetAxis(LY));
     }
     else
     {
+        Serial.println("ahyya");
         _drive.Stop();
     }
 }
